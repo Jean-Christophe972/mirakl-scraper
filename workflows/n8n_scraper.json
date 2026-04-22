@@ -1,0 +1,294 @@
+{
+  "name": "Mirakl Brand Enrichment — Real Data Pipeline",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "▶️ Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [100, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const brands = [{\"Brand Name\":\"AGMES\",\"brandUrl\":\"agmesnyc.com\"},{\"Brand Name\":\"AJE\",\"brandUrl\":\"ajeworld.com\"},{\"Brand Name\":\"ALISON LOU\",\"brandUrl\":\"alisonlou.com\"},{\"Brand Name\":\"Adam Lippes\",\"brandUrl\":\"adamlippes.com\"},{\"Brand Name\":\"Aimé Leon Dore\",\"brandUrl\":\"aimeleondore.com\"},{\"Brand Name\":\"Alessandra Rich\",\"brandUrl\":\"alessandrarich.com\"},{\"Brand Name\":\"Alix of Bohemia\",\"brandUrl\":\"alixofbohemia.com\"},{\"Brand Name\":\"Altuzarra\",\"brandUrl\":\"altuzarra.com\"},{\"Brand Name\":\"Amanu Studio\",\"brandUrl\":\"amanustudio.com\"},{\"Brand Name\":\"Ancient Greek Sandals\",\"brandUrl\":\"ancient-greek-sandals.com\"},{\"Brand Name\":\"Andrea Fohrman\",\"brandUrl\":\"andreafohrman.com\"},{\"Brand Name\":\"Another Tomorrow\",\"brandUrl\":\"anothertomorrow.co\"},{\"Brand Name\":\"BODE New York\",\"brandUrl\":\"bodenewyork.com\"},{\"Brand Name\":\"BONDI BORN\",\"brandUrl\":\"bondiborn.com\"},{\"Brand Name\":\"BPE\",\"brandUrl\":\"daniellefrankelstudio.com\"},{\"Brand Name\":\"Barton Perreira\",\"brandUrl\":\"bartonperreira.com\"},{\"Brand Name\":\"Berceau\",\"brandUrl\":\"almasika.com\"},{\"Brand Name\":\"Borgo de Nor\",\"brandUrl\":\"borgodenor.com\"},{\"Brand Name\":\"Brent Neale\",\"brandUrl\":\"brentneale.com\"},{\"Brand Name\":\"By Pariah\",\"brandUrl\":\"bypariah.com\"},{\"Brand Name\":\"CARLO MORETTI\",\"brandUrl\":\"emporiosirenuse.com\"},{\"Brand Name\":\"CDLP\",\"brandUrl\":\"cdlp.se\"},{\"Brand Name\":\"CHARO RUIZ\",\"brandUrl\":\"charoruiz.com\"},{\"Brand Name\":\"Cabana Magazine\",\"brandUrl\":\"cabanamagazine.com\"},{\"Brand Name\":\"Calle Del Mar LLC\",\"brandUrl\":\"calledelmar.com\"},{\"Brand Name\":\"Carolina Bucci\",\"brandUrl\":\"carolinabucci.com\"},{\"Brand Name\":\"Christian Siriano\",\"brandUrl\":\"christiansiriano.com\"},{\"Brand Name\":\"Christopher Esber\",\"brandUrl\":\"christopheresber.com\"},{\"Brand Name\":\"Christopher John Rogers\",\"brandUrl\":\"christopherjohnrogers.com\"},{\"Brand Name\":\"Clio Peppiatt\",\"brandUrl\":\"cliopeppiatt.co.uk\"},{\"Brand Name\":\"Comme Si\",\"brandUrl\":\"commesi.com\"},{\"Brand Name\":\"Cortanaeshop\",\"brandUrl\":\"cortana.es\"},{\"Brand Name\":\"Diotima\",\"brandUrl\":\"diotima.world\"},{\"Brand Name\":\"Doen\",\"brandUrl\":\"shopdoen.com\"},{\"Brand Name\":\"DÉHANCHE\",\"brandUrl\":\"dehanche.com\"},{\"Brand Name\":\"ESCVDO\",\"brandUrl\":\"escvdo.com\"},{\"Brand Name\":\"Edition\",\"brandUrl\":\"ceciliebahnsen.com\"},{\"Brand Name\":\"El Sol\",\"brandUrl\":\"faithfullthebrand.com\"},{\"Brand Name\":\"Emme Parsons\",\"brandUrl\":\"emmeparsons.com\"},{\"Brand Name\":\"FFORME\",\"brandUrl\":\"fforme.com\"},{\"Brand Name\":\"Faberge\",\"brandUrl\":\"faberge.com\"},{\"Brand Name\":\"FoundRae\",\"brandUrl\":\"foundrae.com\"},{\"Brand Name\":\"GABRIELA HEARST\",\"brandUrl\":\"gabrielahearst.com\"},{\"Brand Name\":\"GALVAN\",\"brandUrl\":\"galvanlondon.com\"},{\"Brand Name\":\"Gigi Burris\",\"brandUrl\":\"gigiburris.com\"},{\"Brand Name\":\"God's True Cashmere\",\"brandUrl\":\"godstruecashmere.com\"},{\"Brand Name\":\"Hunting Season\",\"brandUrl\":\"hunting-season.com\"},{\"Brand Name\":\"Jacques Marie Mage\",\"brandUrl\":\"jacquesmariemage.com\"},{\"Brand Name\":\"Jacquie Aiche\",\"brandUrl\":\"jacquieaiche.com\"},{\"Brand Name\":\"James Perse\",\"brandUrl\":\"jamesperse.com\"},{\"Brand Name\":\"Jennifer Chamandi\",\"brandUrl\":\"jenniferchamandi.com\"},{\"Brand Name\":\"Jennifer Meyer\",\"brandUrl\":\"jennifermeyer.com\"},{\"Brand Name\":\"Judith Leiber Couture\",\"brandUrl\":\"judithleiber.com\"},{\"Brand Name\":\"Juliette\",\"brandUrl\":\"shopjulietta.com\"},{\"Brand Name\":\"Kall Meyer\",\"brandUrl\":\"kallmeyer.nyc\"},{\"Brand Name\":\"Kika Vargas\",\"brandUrl\":\"kikavargas.com\"},{\"Brand Name\":\"Laura Lombardi\",\"brandUrl\":\"lauralombardi.com\"},{\"Brand Name\":\"Les Tien\",\"brandUrl\":\"lestien.com\"},{\"Brand Name\":\"Lie Studio\",\"brandUrl\":\"lie-studio.com\"},{\"Brand Name\":\"Lisa Yang\",\"brandUrl\":\"us.lisa-yang.com\"},{\"Brand Name\":\"Lizzie Fortunato\",\"brandUrl\":\"lizziefortunato.com\"},{\"Brand Name\":\"Loren Stewart\",\"brandUrl\":\"lorenstewart.com\"},{\"Brand Name\":\"MAISON MAYLE\",\"brandUrl\":\"maisonmayle.com\"},{\"Brand Name\":\"MARRAKSHI LIFE\",\"brandUrl\":\"marrakshilife.com\"},{\"Brand Name\":\"Maria McManus\",\"brandUrl\":\"mariamcmanus.com\"},{\"Brand Name\":\"Marla Aaron\",\"brandUrl\":\"marlaaaron.com\"},{\"Brand Name\":\"Marlo Laz\",\"brandUrl\":\"marlolaz.com\"},{\"Brand Name\":\"Marta Ferri\",\"brandUrl\":\"shop.martaferri.com\"},{\"Brand Name\":\"Martha Calvo\",\"brandUrl\":\"marthacalvo.com\"},{\"Brand Name\":\"Mary Katrantzou\",\"brandUrl\":\"marykatrantzou.com\"},{\"Brand Name\":\"Marysia\",\"brandUrl\":\"marysia.com\"},{\"Brand Name\":\"Matteo\",\"brandUrl\":\"matteola.com\"},{\"Brand Name\":\"Maygel Coronel\",\"brandUrl\":\"maygelcoronel.com\"},{\"Brand Name\":\"Melissa Joy Manning\",\"brandUrl\":\"melissajoymanning.com\"},{\"Brand Name\":\"Mizuki\",\"brandUrl\":\"mizukijewels.com\"},{\"Brand Name\":\"Mothers Day\",\"brandUrl\":\"aguabyaguabendita.com\"},{\"Brand Name\":\"Nili Lotan\",\"brandUrl\":\"nililotan.com\"},{\"Brand Name\":\"Olympia Le-Tan\",\"brandUrl\":\"olympialetan.com\"},{\"Brand Name\":\"Ortovox\",\"brandUrl\":\"aztechmountain.com\"},{\"Brand Name\":\"Oseree\",\"brandUrl\":\"oseree.com\"},{\"Brand Name\":\"PF24\",\"brandUrl\":\"alexperry.com.au\"},{\"Brand Name\":\"Paris Texas\",\"brandUrl\":\"us.paristexasbrand.com\"},{\"Brand Name\":\"R13\",\"brandUrl\":\"r13.com\"},{\"Brand Name\":\"Ready to Wear\",\"brandUrl\":\"eliesaab.com\"},{\"Brand Name\":\"Retrofete\",\"brandUrl\":\"retrofete.com\"},{\"Brand Name\":\"Robinson Pelham\",\"brandUrl\":\"robinsonpelham.com\"},{\"Brand Name\":\"Rodarte\",\"brandUrl\":\"rodarte.net\"},{\"Brand Name\":\"Rosie Assoulin\",\"brandUrl\":\"rosieassoulin.com\"},{\"Brand Name\":\"Ruslan Baginskiy\",\"brandUrl\":\"ruslanbaginskiy.com\"},{\"Brand Name\":\"S.S. Daley\",\"brandUrl\":\"ssdaley.com\"},{\"Brand Name\":\"SASUPHI\",\"brandUrl\":\"sasuphi.com\"},{\"Brand Name\":\"SENSI STUDIO\",\"brandUrl\":\"sensistudio.com\"},{\"Brand Name\":\"SOPHIE BUHAI\",\"brandUrl\":\"sophiebuhai.com\"},{\"Brand Name\":\"STONE AND STRAND\",\"brandUrl\":\"stoneandstrand.com\"},{\"Brand Name\":\"Sacai\",\"brandUrl\":\"sacai.jp\"},{\"Brand Name\":\"Serapian\",\"brandUrl\":\"serapian.com\"},{\"Brand Name\":\"Shay Furniture\",\"brandUrl\":\"shayfurniture.com\"},{\"Brand Name\":\"Simone Rocha\",\"brandUrl\":\"shop-us.simonerocha.com\"},{\"Brand Name\":\"Skin Worldwide\",\"brandUrl\":\"skinworldwide.com\"},{\"Brand Name\":\"Sophie Lou Jacobsen\",\"brandUrl\":\"sophieloujacobsen.com\"},{\"Brand Name\":\"Sporty & Rich\",\"brandUrl\":\"sportyandrich.com\"},{\"Brand Name\":\"Suzie Kondi\",\"brandUrl\":\"suziekondi.com\"},{\"Brand Name\":\"Taller Marmo\",\"brandUrl\":\"tallermarmo.com\"},{\"Brand Name\":\"The Elder Statesman\",\"brandUrl\":\"elder-statesman.com\"},{\"Brand Name\":\"The Frankie Shop\",\"brandUrl\":\"thefrankieshop.com\"},{\"Brand Name\":\"The Row\",\"brandUrl\":\"therow.com\"},{\"Brand Name\":\"Tibi\",\"brandUrl\":\"tibi.com\"},{\"Brand Name\":\"Tohum Designs\",\"brandUrl\":\"tohumdesign.com\"},{\"Brand Name\":\"Tove Studio\",\"brandUrl\":\"tove-studio.com\"},{\"Brand Name\":\"Ulla Johnson\",\"brandUrl\":\"ullajohnson.com\"},{\"Brand Name\":\"Womens\",\"brandUrl\":\"bsidesjeans.com\"},{\"Brand Name\":\"Yves Salomon\",\"brandUrl\":\"us.yves-salomon.com\"},{\"Brand Name\":\"arch4\",\"brandUrl\":\"arch4.co.uk\"},{\"Brand Name\":\"lemlem\",\"brandUrl\":\"lemlem.com\"},{\"Brand Name\":\"sorellina Jewellry\",\"brandUrl\":\"sorellinanyc.com\"},{\"Brand Name\":\"ÉTERNE\",\"brandUrl\":\"eterne.com\"}];\nreturn brands;"
+      },
+      "name": "📋 Brands source (116)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [300, 400]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "name": "🔄 Per-brand loop",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://{{ $json.brandUrl }}",
+        "options": {
+          "timeout": 10000,
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "text"
+            }
+          },
+          "redirect": {
+            "redirect": {
+              "followRedirects": true,
+              "maxRedirects": 5
+            }
+          }
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "User-Agent", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" },
+            { "name": "Accept", "value": "text/html,application/xhtml+xml" }
+          ]
+        }
+      },
+      "name": "🌐 Fetch brand homepage",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [720, 400],
+      "notes": "Récupère le HTML de la homepage de la marque (timeout 10s, neverError pour ne pas planter le workflow si site down)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const brand = $('🔄 Per-brand loop').item.json;\nconst html = (typeof $input.item.json === 'string' ? $input.item.json : $input.item.json.data || '') + '';\nconst ok = html.length > 500;\n\n// Platform detection\nconst lc = html.toLowerCase();\nlet platform = 'Unknown';\nif (lc.includes('cdn.shopify.com') || lc.includes('shopify.theme') || lc.includes('myshopify.com')) platform = 'Shopify';\nelse if (lc.includes('/skin/frontend/') || lc.includes('mage.cookies') || lc.includes('magento')) platform = 'Magento';\nelse if (lc.includes('wp-content/plugins/woocommerce') || lc.includes('woocommerce')) platform = 'WooCommerce';\nelse if (lc.includes('bigcommerce.com')) platform = 'BigCommerce';\nelse if (lc.includes('squarespace.com')) platform = 'Squarespace';\nelse if (lc.includes('salesforce') && lc.includes('commerce')) platform = 'Salesforce Commerce';\nelse if (lc.includes('centra.com') || lc.includes('.centra.')) platform = 'Centra';\nelse if (ok) platform = 'Custom';\n\n// Meta\nconst title = (html.match(/<title[^>]*>([^<]+)<\\/title>/i) || [])[1] || '';\nconst metaDesc = (html.match(/<meta[^>]*name=[\"']description[\"'][^>]*content=[\"']([^\"']+)[\"']/i) || [])[1] || '';\nconst ogDesc = (html.match(/<meta[^>]*property=[\"']og:description[\"'][^>]*content=[\"']([^\"']+)[\"']/i) || [])[1] || '';\n\n// Currencies\nconst currencies = [];\nif (/(?:\\$|USD)/.test(html)) currencies.push('USD');\nif (/(?:€|EUR)/.test(html)) currencies.push('EUR');\nif (/(?:£|GBP)/.test(html)) currencies.push('GBP');\nif (/(?:¥|JPY)/.test(html)) currencies.push('JPY');\nif (/\\bA\\$|AUD/.test(html)) currencies.push('AUD');\nif (/\\bCA\\$|CAD/.test(html)) currencies.push('CAD');\n\n// Social handles (keep IG + LinkedIn only — the two BDR ones)\nconst igMatch = html.match(/instagram\\.com\\/([a-zA-Z0-9_\\.]+)/i);\nconst liMatch = html.match(/linkedin\\.com\\/company\\/([a-zA-Z0-9_\\.\\-]+)/i);\n\n// Contact email (filtered)\nlet contact_email_real = '';\nconst emails = html.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g) || [];\nfor (const e of emails) {\n  const el = e.toLowerCase();\n  if (!el.includes('sentry') && !el.includes('example.com') && !el.includes('@2x') && !el.match(/\\.(png|jpg|jpeg|gif|svg|webp)$/)) { contact_email_real = e; break; }\n}\n\n// International shipping claim (boolean)\nconst ships_international = /international\\s*shipping|worldwide\\s*shipping|ships?\\s*worldwide|ships\\s*internationally/i.test(html);\n\n// Text excerpt for GPT\nconst text = html.replace(/<script[\\s\\S]*?<\\/script>/gi, ' ').replace(/<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\nconst excerpt = text.slice(0, 2500);\n\nreturn {\n  brand_name: brand['Brand Name'],\n  brand_url: brand.brandUrl,\n  fetch_ok: ok,\n  platform_detected: platform,\n  page_title: title.replace(/\\s+/g, ' ').trim().slice(0, 200),\n  meta_description: (metaDesc || ogDesc).slice(0, 300),\n  currencies_on_site: currencies.join(','),\n  instagram_handle: igMatch ? igMatch[1] : '',\n  linkedin_handle: liMatch ? liMatch[1] : '',\n  contact_email: contact_email_real,\n  ships_international: ships_international,\n  html_length: html.length,\n  text_excerpt: excerpt\n};"
+      },
+      "name": "🔬 Parse homepage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [940, 400],
+      "notes": "Détecte plateforme e-com, extrait title/meta/description — données réelles"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://{{ $json.brand_url }}/products.json?limit=250",
+        "options": {
+          "timeout": 8000,
+          "response": { "response": { "neverError": true, "responseFormat": "text" } }
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "User-Agent", "value": "Mozilla/5.0" },
+            { "name": "Accept", "value": "application/json" }
+          ]
+        }
+      },
+      "name": "🛍️ Try Shopify /products.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1160, 400],
+      "notes": "Shopify expose /products.json publiquement → on récupère le catalogue réel si la marque est sur Shopify"
+    },
+    {
+      "parameters": {
+        "jsCode": "const meta = $('🔬 Parse homepage').item.json;\nconst rawResp = $input.item.json;\n\n// Parse safely — the HTTP node returns TEXT now (responseFormat: text).\n// Non-Shopify sites return HTML/redirects at /products.json, so we wrap JSON.parse in try/catch.\nlet resp = {};\ntry {\n  let body = '';\n  if (typeof rawResp === 'string') body = rawResp;\n  else if (rawResp && typeof rawResp.data === 'string') body = rawResp.data;\n  else if (rawResp && rawResp.data && typeof rawResp.data === 'object') resp = rawResp.data;\n  else if (typeof rawResp === 'object') resp = rawResp;\n  if (body && body.trim().startsWith('{')) {\n    resp = JSON.parse(body);\n  }\n} catch (e) {\n  resp = {};\n}\nconst products = (resp && Array.isArray(resp.products)) ? resp.products : [];\n\nlet prices = [];\nlet titles = [];\nlet types = new Map(); // product_type -> count (pour dominance)\nlet tagCounts = new Map();\n\nif (Array.isArray(products) && products.length > 0) {\n  for (const p of products) {\n    titles.push(p.title);\n    if (p.product_type) types.set(p.product_type, (types.get(p.product_type)||0) + 1);\n    if (Array.isArray(p.tags)) for (const t of p.tags) {\n      const tag = t.toString().trim();\n      if (tag && tag.length < 40) tagCounts.set(tag, (tagCounts.get(tag)||0) + 1);\n    } else if (typeof p.tags === 'string' && p.tags) {\n      for (const t of p.tags.split(',')) {\n        const tag = t.trim();\n        if (tag && tag.length < 40) tagCounts.set(tag, (tagCounts.get(tag)||0) + 1);\n      }\n    }\n    if (p.variants) for (const v of p.variants) {\n      const price = parseFloat(v.price);\n      // Filtre placeholders Shopify (99999, 999999, etc.)\n      if (!isNaN(price) && price > 0 && price < 20000) prices.push(price);\n    }\n  }\n}\n\nprices.sort((a,b) => a-b);\nconst avg_price = prices.length ? Math.round(prices.reduce((a,b)=>a+b,0) / prices.length) : null;\n\n// product_types triés par dominance (plus fréquent d'abord)\nconst typesSorted = [...types.entries()].sort((a,b) => b[1]-a[1]).slice(0,15).map(([t,c]) => `${t} (${c})`);\n// top tags triés par fréquence\nconst topTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]).slice(0,10).map(([t]) => t);\n\nreturn {\n  ...meta,\n  catalog_scraped: products.length > 0,\n  price_avg_usd_real: avg_price,\n  product_types_list: typesSorted.join(' | '),\n  top_product_tags: topTags.join(', '),\n  product_sample: titles.slice(0, 8).join(' | ')\n};"
+      },
+      "name": "🔬 Parse catalog",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1380, 400],
+      "notes": "Parse le JSON Shopify → SKU count réel + prix médian/min/max réels"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Light wholesale scrape — juste pour récupérer wholesale_contact_email.\n// Scan les liens sur la homepage pointant vers une page wholesale/b2b, puis fetch + extract email.\n\nconst d = $input.item.json;\nconst brandUrl = d.brand_url;\nconst homeHtml = d._homepage_html_cache || '';\n\nconst UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';\n\nasync function fetchUrl(url, timeout = 7000) {\n  try {\n    const res = await this.helpers.httpRequest({\n      method: 'GET', url,\n      headers: { 'User-Agent': UA, 'Accept': 'text/html', 'Accept-Language': 'en-US,en;q=0.9' },\n      timeout, returnFullResponse: true, ignoreHttpStatusErrors: true\n    });\n    const status = res.statusCode || 0;\n    return { ok: status >= 200 && status < 400, body: (res.body || '').toString() };\n  } catch (e) { return { ok: false, body: '' }; }\n}\n\nconst WHOLESALE_PATHS = ['/wholesale','/pages/wholesale','/b2b','/pages/b2b','/for-retailers','/trade','/wholesale-inquiries'];\n\nasync function findWholesale(baseUrl) {\n  for (const p of WHOLESALE_PATHS) {\n    const r = await fetchUrl.call(this, `https://${baseUrl}${p}`);\n    if (r.ok && r.body.length > 500) {\n      const lc = r.body.toLowerCase();\n      if (/wholesale|minimum order|moq|trade account|b2b|retail partner|wholesale inquir/.test(lc)) {\n        return r.body;\n      }\n    }\n  }\n  return null;\n}\n\nconst wholesaleBody = await findWholesale.call(this, brandUrl);\n\nlet wholesale_contact_email = '';\nif (wholesaleBody) {\n  const emails = (wholesaleBody.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g) || [])\n    .filter(e => {\n      const el = e.toLowerCase();\n      return !el.match(/\\.(png|jpg|jpeg|gif|svg|webp)$/) && !el.includes('sentry') && !el.includes('example.com') && !el.includes('@2x');\n    });\n  wholesale_contact_email = emails.find(e => /wholesale|trade|b2b|sales|partner|orders/i.test(e)) || emails[0] || '';\n}\n\nreturn { ...d, wholesale_contact_email };"
+      },
+      "name": "📄 Wholesale email scrape",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1600, 400],
+      "notes": "Light scrape /wholesale → extract wholesale_contact_email. Seule page BDR conservée dans le schéma 18-cols."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build OpenAI request — strict extraction aligned with team's G Sheet dropdowns.\n// 19-col schema. Every enum respects EXACT strings from the dropdown list.\n\nconst d = $input.item.json;\n\nconst catalogBlock = d.catalog_scraped\n  ? `=== CATALOG (Shopify API, factual) ===\\nAverage price USD (placeholders filtered): ${d.price_avg_usd_real}\\nProduct types with counts (dominant first): ${d.product_types_list}\\nTop product tags: ${d.top_product_tags}\\nProduct samples: ${d.product_sample}`\n  : `=== CATALOG === Not available.`;\n\nconst userMsg = `Extract factual brand classification from the REAL scraped content below. DO NOT invent. Respect EXACT enum values.\n\n=== BRAND ===\nName: ${d.brand_name}\nURL: https://${d.brand_url}\nPage title: ${d.page_title}\nMeta description: ${d.meta_description}\nCurrencies on site: ${d.currencies_on_site}\nShips international claim: ${d.ships_international}\n\n${catalogBlock}\n\n=== HOMEPAGE TEXT EXCERPT ===\n${(d.text_excerpt || '').slice(0, 2000)}\n\n=== STRICT RULES ===\n\n1. country_origin — 2-letter ISO code (US, FR, IT, AU, GB, ES, SE, DE, JP, PT, NL, CH, DK, BE, etc.). Infer ONLY from explicit markers (HQ/address mention, TLD .fr/.it/.es/.co.uk/.com.au/.jp, \"Made in X\", \"based in X\"). Else \"Unknown\".\n\n2. brand_tier (exact values): luxury | premium | accessible-premium | mid-market | unknown.\n   Rule by avg price USD: luxury >$800 | premium $300-$800 | accessible-premium $100-$300 | mid-market <$100.\n   If no price data, infer from copy tone + product types.\n\n3. category (exact values from team dropdown — pick SINGLE dominant):\n   • \"Womenswear\" — apparel EXCLUSIVELY féminine (dresses, skirts, tops, women-only)\n   • \"Menswear\" — apparel EXCLUSIVELY masculine\n   • \"Ready-to-wear\" — apparel unisex OR mixed (both genders)\n   • \"Accessories\" — specialized brand (bags/belts/scarves/hats)\n   • \"Bags & Handbags\" — specialized leather goods / handbags\n   • \"Footwear\" — specialized shoes/sandals/boots brand\n   • \"Jewelry\" — specialized rings/necklaces/earrings\n   • \"Eyewear\" — specialized sunglasses/frames\n   • \"Headwear\" — specialized hats/caps\n   • \"Swimwear & Beachwear\" — specialized swim/beach (EXACT string with space around &)\n   • \"Activewear\" — specialized sport/wellness\n   • \"Lingerie\" — specialized underwear/intimates\n   • \"Outerwear\" — specialized coats/jackets\n   • \"Home & Lifestyle\" — home goods / décor / lifestyle objects\n   • \"Beauty\" — cosmetics / skincare / fragrance\n   • \"Multi-category\" — ONLY if NO single category exceeds 40% AND 3+ categories equally represented\n   • \"unknown\" — if truly no signal\n   \n   Decision flow:\n   - If apparel + women only → Womenswear\n   - If apparel + men only → Menswear\n   - If apparel + unisex/mixed → Ready-to-wear\n   - If non-apparel specialized → pick the matching category\n\n4. brand_size (exact values): Indie | small | mid | large | Global | unknown.\n   • \"Indie\" = designer/créateur indé, <50 SKUs, DTC pur, emerging\n   • \"small\" = petite marque établie, 50-150 SKUs\n   • \"mid\" = marque établie, 150-400 SKUs, distribution claire\n   • \"large\" = catalogue large, 400-1000 SKUs, fort réseau retail\n   • \"Global\" = marque mondiale, >1000 SKUs OR présence retail massive multi-continents\n\n5. target_gender (exact values): women | men | unisex | unknown.\n   \"unisex\" ONLY if explicit unisex positioning or both gender collections exist.\n\n6. current_marketplace — STRICT extraction only. Return an array of marketplace names that APPEAR LITERALLY in the homepage/press text excerpt (e.g. \"stocked at Nordstrom\", \"featured on Net-a-Porter\", \"available at Bloomingdales\"). DO NOT guess from brand fame. Valid values ONLY from this closed list: Bloomingdales, Nordstrom, Galeries Lafayette, La Redoute, Debenhams, John Lewis, Amazon, Farfetch, ASOS, Zalando, Net-a-Porter, Mytheresa, MatchesFashion, Ssense.\n   - If text EXPLICITLY says DTC-only / no retailers → return [\"None\"]\n   - If no marketplace literally mentioned → return [\"Unknown\"]\n   - Match name variants: \"Net-a-Porter\" = \"netaporter.com\" = \"NET-A-PORTER\". \"Galeries Lafayette\" = \"galerieslafayette.com\". Always return the canonical form from the list above.\n\n7. brand_story_summary — ONE factual sentence from homepage text. If nothing usable, return \"\".\n\n8. key_aesthetic — 2-3 keywords describing visual/design style (e.g. \"minimalist, contemporary\" / \"romantic, bohemian\" / \"sporty, wellness-inspired\" / \"timeless, artisanal\"). Grounded in copy + product types + tags. If unclear, return \"\".\n\n=== RETURN JSON (all fields required) ===\n{\n  \"country_origin\": \"ISO2 or Unknown\",\n  \"brand_tier\": \"luxury|premium|accessible-premium|mid-market|unknown\",\n  \"category\": \"<one exact value from rule 3>\",\n  \"brand_size\": \"Indie|small|mid|large|Global|unknown\",\n  \"target_gender\": \"women|men|unisex|unknown\",\n  \"current_marketplace\": [\"marketplace1\",\"marketplace2\"],\n  \"brand_story_summary\": \"one sentence or empty string\",\n  \"key_aesthetic\": \"2-3 keywords or empty string\"\n}\n\nReturn ONLY valid JSON. No markdown.`;\n\nreturn {\n  ...d,\n  openai_body: {\n    model: 'gpt-4o-mini',\n    temperature: 0,\n    response_format: { type: 'json_object' },\n    messages: [\n      { role: 'system', content: 'You are a strict fashion brand data classifier for a BDR prospection DB. Use ONLY the provided scraped content. Respect EXACT enum strings (case, spaces, hyphens). Never invent. Return valid JSON only.' },\n      { role: 'user', content: userMsg }\n    ]\n  }\n};"
+      },
+      "name": "✏️ Build GPT prompt (real data)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1820, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.openai_body }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "name": "🤖 GPT classify (on real data)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [2040, 400],
+      "notes": "GPT-4o-mini suffit car classification simple sur données réelles — beaucoup moins cher"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Consolidate → 19-column flat DB row (aligned avec dropdowns G Sheet team).\n// IDENTITÉ (2) + CONTACT (2) + PROFIL (5) + COMMERCE (5) + MATCHING (1) + PRODUITS (3) + META (1) = 19\n\nconst s = $('✏️ Build GPT prompt (real data)').item.json;\nconst raw = $input.item.json.choices?.[0]?.message?.content || '{}';\n\nlet g = {};\ntry { g = JSON.parse(raw); } catch(e) {}\n\n// Enums EXACTS tels que dans le G Sheet de l'équipe (case + spaces sensitive)\nconst TIER = ['luxury','premium','accessible-premium','mid-market'];\nconst CAT = [\n  'Ready-to-wear','Womenswear','Menswear',\n  'Accessories','Bags & Handbags','Footwear','Jewelry','Eyewear','Headwear',\n  'Swimwear & Beachwear','Activewear','Lingerie','Outerwear',\n  'Home & Lifestyle','Beauty','Multi-category'\n];\nconst SIZE = ['Indie','small','mid','large','Global'];\nconst GEN = ['women','men','unisex'];\nconst MARKETPLACES = ['Bloomingdales','Nordstrom','Galeries Lafayette','La Redoute','Debenhams','John Lewis','Amazon','Farfetch','ASOS','Zalando','Net-a-Porter','Mytheresa','MatchesFashion','Ssense'];\nconst v = (x,a,f) => a.includes(x) ? x : f;\n\n// country_origin: ISO2 uppercase ou \"Unknown\"\nconst rawCountry = (g.country_origin || '').toString().toUpperCase().trim();\nconst country_origin = (rawCountry && rawCountry !== 'UNKNOWN' && rawCountry.length === 2 && /^[A-Z]{2}$/.test(rawCountry)) ? rawCountry : 'Unknown';\n\n// current_marketplace: validation stricte contre la closed list\nlet mpList = Array.isArray(g.current_marketplace) ? g.current_marketplace : (typeof g.current_marketplace === 'string' ? g.current_marketplace.split(',').map(x=>x.trim()) : []);\nmpList = mpList.map(m => m.toString().trim()).filter(Boolean);\nif (mpList.includes('None')) mpList = ['None'];\nelse {\n  const validated = mpList.filter(m => MARKETPLACES.includes(m));\n  mpList = validated.length > 0 ? validated : ['Unknown'];\n}\nconst current_marketplace = mpList.join(', ');\n\nreturn {\n  // === IDENTITÉ (2) ===\n  brand_name: s.brand_name,\n  brand_url: `https://${s.brand_url}`,\n\n  // === CONTACT (2) ===\n  contact_email: s.contact_email || '',\n  wholesale_contact_email: s.wholesale_contact_email || '',\n\n  // === PROFIL (5) ===\n  country_origin,\n  brand_tier: v(g.brand_tier, TIER, 'unknown'),\n  category: v(g.category, CAT, 'unknown'),\n  brand_size: v(g.brand_size, SIZE, 'unknown'),\n  target_gender: v(g.target_gender, GEN, 'unknown'),\n\n  // === COMMERCE (5) ===\n  platform: s.platform_detected,\n  price_avg_usd: s.price_avg_usd_real || 0,\n  ships_international: s.ships_international === true,\n  brand_story_summary: (g.brand_story_summary || '').toString().slice(0, 300),\n  key_aesthetic: (g.key_aesthetic || '').toString().slice(0, 100),\n\n  // === MATCHING (1) ===\n  current_marketplace,\n\n  // === PRODUITS (3) ===\n  product_types_list: s.product_types_list || '',\n  top_product_tags: s.top_product_tags || '',\n  product_sample: s.product_sample || '',\n\n  // === META (1) ===\n  enriched_at: new Date().toISOString()\n};"
+      },
+      "name": "🔧 Consolidate (19 cols)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2260, 400],
+      "notes": "Merge scraping réel + classification GPT → score final calculé uniquement sur données réelles"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "brands",
+        "include": "allFields"
+      },
+      "name": "📦 Aggregate all",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [2480, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const brands = $input.item.json.brands;\nconst n = brands.length;\n\nconst withContactEmail = brands.filter(b => b.contact_email).length;\nconst withWholesaleEmail = brands.filter(b => b.wholesale_contact_email).length;\nconst withPrice = brands.filter(b => b.price_avg_usd > 0);\nconst avgPrice = withPrice.length ? Math.round(withPrice.reduce((a,b)=>a+b.price_avg_usd,0) / withPrice.length) : 0;\nconst withMarketplace = brands.filter(b => b.current_marketplace && b.current_marketplace !== 'Unknown' && b.current_marketplace !== 'None').length;\n\nconst countBy = (k) => brands.reduce((acc,b) => { const v=b[k]||'unknown'; acc[v]=(acc[v]||0)+1; return acc; }, {});\n\n// Compter la présence individuelle de chaque marketplace\nconst mpCount = {};\nfor (const b of brands) {\n  if (!b.current_marketplace || b.current_marketplace === 'Unknown' || b.current_marketplace === 'None') continue;\n  for (const mp of b.current_marketplace.split(',').map(x=>x.trim())) {\n    if (mp) mpCount[mp] = (mpCount[mp]||0) + 1;\n  }\n}\n\n// Tri alphabétique par brand_name\nconst sorted = [...brands].sort((a,b) => (a.brand_name||'').localeCompare(b.brand_name||''));\n\nreturn {\n  summary: {\n    total: n,\n    with_contact_email: withContactEmail,\n    with_wholesale_email: withWholesaleEmail,\n    with_price_data: withPrice.length,\n    avg_price_usd: avgPrice,\n    with_marketplace_detected: withMarketplace,\n    distribution_tier: countBy('brand_tier'),\n    distribution_category: countBy('category'),\n    distribution_size: countBy('brand_size'),\n    distribution_gender: countBy('target_gender'),\n    distribution_country: countBy('country_origin'),\n    distribution_platform: countBy('platform'),\n    marketplace_presence_count: mpCount,\n    generated_at: new Date().toISOString()\n  },\n  brands: sorted\n};"
+      },
+      "name": "📊 Final stats + sort",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2700, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare JSON payload pour GitHub push + local file write.\n// Output binary pour le node Write File, + json_string pour le node GitHub.\nconst data = $input.item.json;\nconst jsonString = JSON.stringify(data, null, 2);\nconst buffer = Buffer.from(jsonString, 'utf-8');\nconst binary = await this.helpers.prepareBinaryData(buffer, 'brands_enriched.json', 'application/json');\n\nreturn {\n  json: {\n    json_string: jsonString,\n    filename: 'brands_enriched.json',\n    commit_message: `Enrichment run ${new Date().toISOString()} — ${data.summary.total} brands`,\n    summary: data.summary\n  },\n  binary: {\n    data: binary\n  }\n};"
+      },
+      "name": "💾 Prepare export",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2920, 400],
+      "notes": "Sérialise le JSON final + prépare base64 pour le push GitHub"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "file",
+        "operation": "edit",
+        "owner": "REPLACE_WITH_GITHUB_USERNAME",
+        "repository": "mirakl-scraper",
+        "filePath": "data/brands_enriched.json",
+        "fileContent": "={{ $('💾 Prepare export').item.json.json_string }}",
+        "commitMessage": "={{ $('💾 Prepare export').item.json.commit_message }}",
+        "additionalParameters": {}
+      },
+      "name": "🐙 Push to GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [3140, 480],
+      "notes": "⚠️ Configure credential GitHub (Personal Access Token) + owner/repo. Raw URL Dust-ready : https://raw.githubusercontent.com/<owner>/mirakl-scraper/main/data/brands_enriched.json",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "brands",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "🌐 Webhook — GET /brands",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [100, 700],
+      "notes": "Endpoint public pour Dust. Hit GET /webhook/brands → renvoie le JSON enrichi. Nécessite que le GitHub node ait déjà poussé au moins une fois."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://raw.githubusercontent.com/REPLACE_WITH_GITHUB_USERNAME/mirakl-scraper/main/data/brands_enriched.json",
+        "options": {
+          "response": { "response": { "responseFormat": "json" } }
+        }
+      },
+      "name": "📥 Fetch JSON from GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [320, 700]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "📤 Respond with JSON",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [540, 700]
+    }
+  ],
+  "connections": {
+    "▶️ Manual Trigger": { "main": [[ { "node": "📋 Brands source (116)", "type": "main", "index": 0 } ]] },
+    "📋 Brands source (116)": { "main": [[ { "node": "🔄 Per-brand loop", "type": "main", "index": 0 } ]] },
+    "🔄 Per-brand loop": { "main": [
+      [ { "node": "📦 Aggregate all", "type": "main", "index": 0 } ],
+      [ { "node": "🌐 Fetch brand homepage", "type": "main", "index": 0 } ]
+    ] },
+    "🌐 Fetch brand homepage": { "main": [[ { "node": "🔬 Parse homepage", "type": "main", "index": 0 } ]] },
+    "🔬 Parse homepage": { "main": [[ { "node": "🛍️ Try Shopify /products.json", "type": "main", "index": 0 } ]] },
+    "🛍️ Try Shopify /products.json": { "main": [[ { "node": "🔬 Parse catalog", "type": "main", "index": 0 } ]] },
+    "🔬 Parse catalog": { "main": [[ { "node": "📄 Wholesale email scrape", "type": "main", "index": 0 } ]] },
+    "📄 Wholesale email scrape": { "main": [[ { "node": "✏️ Build GPT prompt (real data)", "type": "main", "index": 0 } ]] },
+    "✏️ Build GPT prompt (real data)": { "main": [[ { "node": "🤖 GPT classify (on real data)", "type": "main", "index": 0 } ]] },
+    "🤖 GPT classify (on real data)": { "main": [[ { "node": "🔧 Consolidate (19 cols)", "type": "main", "index": 0 } ]] },
+    "🔧 Consolidate (19 cols)": { "main": [[ { "node": "🔄 Per-brand loop", "type": "main", "index": 0 } ]] },
+    "📦 Aggregate all": { "main": [[ { "node": "📊 Final stats + sort", "type": "main", "index": 0 } ]] },
+    "📊 Final stats + sort": { "main": [[ { "node": "💾 Prepare export", "type": "main", "index": 0 } ]] },
+    "💾 Prepare export": { "main": [[ { "node": "🐙 Push to GitHub", "type": "main", "index": 0 } ]] },
+    "🌐 Webhook — GET /brands": { "main": [[ { "node": "📥 Fetch JSON from GitHub", "type": "main", "index": 0 } ]] },
+    "📥 Fetch JSON from GitHub": { "main": [[ { "node": "📤 Respond with JSON", "type": "main", "index": 0 } ]] }
+  },
+  "_meta": {
+    "use_case": "Mirakl Hackathon UC2 — BDR Outreach. Lean 19-col enrichment DB aligned with team's G Sheet dropdowns.",
+    "schema_19_columns": {
+      "identite": ["brand_name","brand_url"],
+      "contact": ["contact_email","wholesale_contact_email"],
+      "profil": ["country_origin","brand_tier","category","brand_size","target_gender"],
+      "commerce": ["platform","price_avg_usd","ships_international","brand_story_summary","key_aesthetic"],
+      "matching": ["current_marketplace"],
+      "produits": ["product_types_list","top_product_tags","product_sample"],
+      "meta": ["enriched_at"]
+    },
+    "enums_strict": {
+      "brand_tier": ["luxury","premium","accessible-premium","mid-market","unknown"],
+      "category": ["Ready-to-wear","Womenswear","Menswear","Accessories","Bags & Handbags","Footwear","Jewelry","Eyewear","Headwear","Swimwear & Beachwear","Activewear","Lingerie","Outerwear","Home & Lifestyle","Beauty","Multi-category","unknown"],
+      "brand_size": ["Indie","small","mid","large","Global","unknown"],
+      "target_gender": ["women","men","unisex","unknown"],
+      "current_marketplace_values": ["Bloomingdales","Nordstrom","Galeries Lafayette","La Redoute","Debenhams","John Lewis","Amazon","Farfetch","ASOS","Zalando","Net-a-Porter","Mytheresa","MatchesFashion","Ssense","None","Unknown"]
+    },
+    "option_A_export": {
+      "description": "Post-enrichment: JSON sérialisé → écrit sur disque local + poussé sur GitHub (versioning auto).",
+      "dust_endpoint_direct": "https://raw.githubusercontent.com/<OWNER>/mirakl-scraper/main/data/brands_enriched.json",
+      "dust_endpoint_via_webhook": "https://<n8n-instance>/webhook/brands",
+      "setup_required": [
+        "Remplacer REPLACE_WITH_GITHUB_USERNAME dans le node GitHub + Webhook Fetch",
+        "Configurer credential GitHub Personal Access Token (scope: repo)",
+        "Activer le workflow pour que le webhook soit live"
+      ]
+    }
+  }
+}
