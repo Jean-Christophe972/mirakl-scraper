@@ -37,12 +37,25 @@ fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
+// ScraperAPI integration — set SCRAPERAPI_KEY in .env, then pass --proxy flag to route through proxy
+const SCRAPERAPI_KEY = process.env.SCRAPERAPI_KEY || '';
+const USE_PROXY = args.includes('--proxy') && !!SCRAPERAPI_KEY;
+if (args.includes('--proxy') && !SCRAPERAPI_KEY) {
+  console.error('⚠️  --proxy flag set but SCRAPERAPI_KEY missing in .env. Running without proxy.');
+}
+if (USE_PROXY) console.log('🛡️  Proxy mode ON (ScraperAPI) — Cloudflare bypass enabled.');
+
+function wrapProxy(url) {
+  if (!USE_PROXY) return url;
+  return `http://api.scraperapi.com/?api_key=${SCRAPERAPI_KEY}&url=${encodeURIComponent(url)}`;
+}
+
 // -------- Utils --------
 async function fetchOnce(url, timeout) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeout);
   try {
-    const res = await fetch(url, {
+    const res = await fetch(wrapProxy(url), {
       headers: { 'User-Agent': UA, 'Accept': 'text/html,application/json', 'Accept-Language': 'en-US,en;q=0.9' },
       signal: ctrl.signal,
       redirect: 'follow'
@@ -55,7 +68,10 @@ async function fetchOnce(url, timeout) {
 
 // Retry on 429/5xx with exponential backoff + jitter (6 attempts, up to ~2 min total)
 async function fetchText(url, timeout = 12000) {
-  const waits = [2000, 5000, 10000, 20000, 40000, 60000];
+  // With proxy, ScraperAPI handles retries internally — shorter wait and fewer attempts
+  const waits = USE_PROXY ? [1000, 2000, 4000] : [2000, 5000, 10000, 20000, 40000, 60000];
+  // Proxy calls take longer (ScraperAPI waits for response) — bump timeout
+  if (USE_PROXY) timeout = Math.max(timeout, 60000);
   for (let attempt = 0; attempt < waits.length; attempt++) {
     const r = await fetchOnce(url, timeout);
     if (r.ok) return r;
