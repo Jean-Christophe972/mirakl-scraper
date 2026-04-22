@@ -2,3 +2,6 @@ node_modules/
 .env
 .DS_Store
 *.log
+
+# Monolithic catalog is too big for GitHub (>100MB). Use per-brand split files instead.
+data/output/products_catalog.json
