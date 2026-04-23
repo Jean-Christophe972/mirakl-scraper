@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at": "2026-04-22T14:23:39.249Z",
-    "total_brands": 112,
-    "total_products": 85666,
-    "avg_products_per_brand": 765,
+    "generated_at": "2026-04-23T08:10:49.969Z",
+    "total_brands": 117,
+    "total_products": 89022,
+    "avg_products_per_brand": 761,
     "note": "For full product data of a brand, fetch file_url from the corresponding entry in brands[]."
   },
   "brands": [
@@ -782,6 +782,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/pf24.json"
     },
     {
+      "brand_name": "Drake's",
+      "brand_slug": "drake-s",
+      "product_count": 1000,
+      "price_min": 6.95,
+      "price_max": 3700,
+      "price_avg": 480,
+      "top_product_types": [
+        {
+          "type": "Casual Shirts",
+          "count": 100
+        },
+        {
+          "type": "SHOPIFY",
+          "count": 83
+        },
+        {
+          "type": "Patterned Ties",
+          "count": 83
+        },
+        {
+          "type": "Scarves",
+          "count": 83
+        },
+        {
+          "type": "Hats",
+          "count": 60
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/drake-s.json"
+    },
+    {
+      "brand_name": "Cinq à Sept",
+      "brand_slug": "cinq-a-sept",
+      "product_count": 1000,
+      "price_min": 0.98,
+      "price_max": 995,
+      "price_avg": 309,
+      "top_product_types": [
+        {
+          "type": "Dress",
+          "count": 223
+        },
+        {
+          "type": "Pants",
+          "count": 161
+        },
+        {
+          "type": "Jacket",
+          "count": 98
+        },
+        {
+          "type": "Woven Tops",
+          "count": 94
+        },
+        {
+          "type": "Knit Top",
+          "count": 60
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/cinq-a-sept.json"
+    },
+    {
       "brand_name": "El Sol",
       "brand_slug": "el-sol",
       "product_count": 971,
@@ -935,6 +997,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/yves-salomon.json"
+    },
+    {
+      "brand_name": "Orlebar Brown",
+      "brand_slug": "orlebar-brown",
+      "product_count": 750,
+      "price_min": 20,
+      "price_max": 1385,
+      "price_avg": 293,
+      "top_product_types": [
+        {
+          "type": "Relaxed Fit Short Sleeve Resort Shirt In Night Iris",
+          "count": 4
+        },
+        {
+          "type": "White Shorter-Length Swim Shorts",
+          "count": 2
+        },
+        {
+          "type": "Black Longest-Length Swim Shorts",
+          "count": 2
+        },
+        {
+          "type": "Navy Tailored Fit Pique Polo Shirt",
+          "count": 2
+        },
+        {
+          "type": "White Shortest-Length Swim Shorts",
+          "count": 2
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/orlebar-brown.json"
     },
     {
       "brand_name": "Judith Leiber Couture",
@@ -1489,6 +1582,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/kall-meyer.json"
+    },
+    {
+      "brand_name": "Oliver Spencer",
+      "brand_slug": "oliver-spencer",
+      "product_count": 479,
+      "price_min": 13,
+      "price_max": 1150,
+      "price_avg": 287,
+      "top_product_types": [
+        {
+          "type": "Shirts-Spring 26",
+          "count": 43
+        },
+        {
+          "type": "Combined Suit Product",
+          "count": 30
+        },
+        {
+          "type": "Jersey-Spring 26",
+          "count": 30
+        },
+        {
+          "type": "Trousers & Shorts-Spring 26",
+          "count": 24
+        },
+        {
+          "type": "Publications-Rollover",
+          "count": 22
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/oliver-spencer.json"
     },
     {
       "brand_name": "Serapian",
@@ -3035,6 +3159,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/borgo-de-nor.json"
+    },
+    {
+      "brand_name": "Kjaer Weis",
+      "brand_slug": "kjaer-weis",
+      "product_count": 127,
+      "price_min": 18,
+      "price_max": 165,
+      "price_avg": 37,
+      "top_product_types": [
+        {
+          "type": "Lipstick",
+          "count": 18
+        },
+        {
+          "type": "Cream Blush",
+          "count": 13
+        },
+        {
+          "type": "Lip Gloss",
+          "count": 10
+        },
+        {
+          "type": "Powder Eye Shadow",
+          "count": 10
+        },
+        {
+          "type": "Liquid Foundation",
+          "count": 9
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/kjaer-weis.json"
     },
     {
       "brand_name": "Sophie Lou Jacobsen",

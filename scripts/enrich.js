@@ -132,7 +132,8 @@ function parseHomepage(html, brand) {
     }
   }
 
-  const ships_international = /international\s*shipping|worldwide\s*shipping|ships?\s*worldwide|ships\s*internationally/i.test(html);
+  // ships_international: removed — regex on homepage is too noisy (80% false negatives).
+  // Teammates will enrich this field in Supabase via dedicated /shipping + /faq scraping.
 
   const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 
@@ -145,7 +146,6 @@ function parseHomepage(html, brand) {
     meta_description: (metaDesc || ogDesc).slice(0, 300),
     currencies_on_site: currencies.join(','),
     contact_email,
-    ships_international,
     text_excerpt: text.slice(0, 2500)
   };
 }
@@ -219,8 +219,6 @@ URL: https://${d.brand_url}
 Page title: ${d.page_title}
 Meta description: ${d.meta_description}
 Currencies on site: ${d.currencies_on_site}
-Ships international claim: ${d.ships_international}
-
 ${catalogBlock}
 
 === HOMEPAGE TEXT EXCERPT ===
@@ -332,7 +330,6 @@ function consolidate(scraped, g, wholesaleEmail) {
     target_gender: pickEnum(g.target_gender, GEN, 'unknown'),
     platform: scraped.platform_detected,
     price_avg_usd: scraped.price_avg_usd_real || 0,
-    ships_international: scraped.ships_international === true,
     brand_story_summary: (g.brand_story_summary || '').toString().slice(0, 300),
     key_aesthetic: (g.key_aesthetic || '').toString().slice(0, 100),
     current_marketplace: mp.join(', '),
