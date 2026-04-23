@@ -1,0 +1,175 @@
+{
+  "name": "Mirakl — Import products via Supabase REST API",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Start (Manual)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://ltuarofidogdjhzosboe.supabase.co/rest/v1/sellers?select=seller_id,seller_name&limit=1000",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{$credentials.apiKey}}" },
+            { "name": "Authorization", "value": "=Bearer {{$credentials.apiKey}}" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-sellers",
+      "name": "Fetch all sellers (UUID map)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [420, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_HTTP_HEADER_AUTH_CRED",
+          "name": "Supabase API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build seller_name → seller_id map from the fetched sellers\nconst sellers = $input.all();\nconst sellerMap = {};\nfor (const row of sellers) {\n  sellerMap[row.json.seller_name] = row.json.seller_id;\n}\n// Return a single item carrying the map + the list of brand slugs from index\nreturn [{ json: { sellerMap, sellerCount: Object.keys(sellerMap).length } }];"
+      },
+      "id": "build-map",
+      "name": "Build seller name → UUID map",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products_index.json",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "id": "fetch-index",
+      "name": "Fetch products_index.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "brands",
+        "options": {}
+      },
+      "id": "split-brands",
+      "name": "Split per-brand entries",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop",
+      "name": "Loop over brands",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.file_url }}",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "id": "fetch-brand-file",
+      "name": "Fetch brand product file",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1520, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Transform brand's products into seller_products payload\n// Must resolve seller_id from the sellerMap built earlier\nconst brandPayload = $input.first().json;\nconst sellerMap = $('Build seller name → UUID map').first().json.sellerMap;\n\nconst sellerId = sellerMap[brandPayload.brand_name];\nif (!sellerId) {\n  console.log(`⚠️ No seller_id found for ${brandPayload.brand_name}, skipping`);\n  return [];\n}\n\nconst rows = (brandPayload.products || []).map(p => ({\n  seller_id: sellerId,\n  product_name: (p.title || '').slice(0, 500),\n  category: p.product_type || null,\n  avg_price: (p.price_min != null && p.price_max != null) ? Math.round((p.price_min + p.price_max) / 2) : (p.price_min || p.price_max || null),\n  min_price: p.price_min ?? null,\n  max_price: p.price_max ?? null,\n  product_id_shopify: p.id ? String(p.id) : null,\n  handle: p.handle || null,\n  tags: Array.isArray(p.tags) ? p.tags : null,\n  available: p.available ?? null,\n  vendor: p.vendor || null,\n  url: p.url || null\n}));\n\n// Split rows into batches of 500 for efficient POST\nconst BATCH = 500;\nconst batches = [];\nfor (let i = 0; i < rows.length; i += BATCH) {\n  batches.push({ json: { brand_name: brandPayload.brand_name, batch: rows.slice(i, i + BATCH) } });\n}\nreturn batches;"
+      },
+      "id": "transform",
+      "name": "Transform + batch products",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://ltuarofidogdjhzosboe.supabase.co/rest/v1/seller_products",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{$credentials.apiKey}}" },
+            { "name": "Authorization", "value": "=Bearer {{$credentials.apiKey}}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=minimal" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.batch) }}",
+        "options": {}
+      },
+      "id": "post-products",
+      "name": "POST batch to Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1960, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_HTTP_HEADER_AUTH_CRED",
+          "name": "Supabase API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 🚀 Comment utiliser ce workflow\n\nCe workflow importe les 153k produits via l'**API REST Supabase** (pas de Postgres, pas de port bloqué).\n\n### 1. Créer la credential HTTP Header Auth\n\nDans **n8n → Credentials → Add Credential → \"Header Auth\"** :\n- **Credential Name** : `Supabase API Key`\n- **Name** : `apikey`\n- **Value** : colle ta **service_role key** Supabase (pas l'anon !)\n\n⚠️ Attention : c'est \"Header Auth\" (pas \"Supabase API\"). On utilise juste 1 header.\n\n### 2. Lier la credential aux 2 nodes HTTP\n\n- **\"Fetch all sellers\"** (premier HTTP)\n- **\"POST batch to Supabase\"** (dernier HTTP)\n\nDans chaque node, sélectionne la credential `Supabase API Key`.\n\n### 3. Exécuter\n\nClique **Execute Workflow**. Durée : ~5-10 min (batches de 500 produits, ~300 requests).\n\n### Vérifier en temps réel\n\nDans Supabase SQL Editor : `SELECT COUNT(*) FROM seller_products;`",
+        "height": 440,
+        "width": 480
+      },
+      "id": "notes",
+      "name": "Instructions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [200, -180]
+    }
+  ],
+  "connections": {
+    "Start (Manual)": {
+      "main": [[{ "node": "Fetch all sellers (UUID map)", "type": "main", "index": 0 }]]
+    },
+    "Fetch all sellers (UUID map)": {
+      "main": [[{ "node": "Build seller name → UUID map", "type": "main", "index": 0 }]]
+    },
+    "Build seller name → UUID map": {
+      "main": [[{ "node": "Fetch products_index.json", "type": "main", "index": 0 }]]
+    },
+    "Fetch products_index.json": {
+      "main": [[{ "node": "Split per-brand entries", "type": "main", "index": 0 }]]
+    },
+    "Split per-brand entries": {
+      "main": [[{ "node": "Loop over brands", "type": "main", "index": 0 }]]
+    },
+    "Loop over brands": {
+      "main": [[{ "node": "Fetch brand product file", "type": "main", "index": 0 }]]
+    },
+    "Fetch brand product file": {
+      "main": [[{ "node": "Transform + batch products", "type": "main", "index": 0 }]]
+    },
+    "Transform + batch products": {
+      "main": [[{ "node": "POST batch to Supabase", "type": "main", "index": 0 }]]
+    },
+    "POST batch to Supabase": {
+      "main": [[{ "node": "Loop over brands", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {},
+  "versionId": "1"
+}
