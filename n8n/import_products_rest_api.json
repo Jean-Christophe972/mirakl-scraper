@@ -12,26 +12,15 @@
     {
       "parameters": {
         "url": "https://ltuarofidogdjhzosboe.supabase.co/rest/v1/sellers?select=seller_id,seller_name&limit=1000",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            { "name": "apikey", "value": "={{$credentials.apiKey}}" },
-            { "name": "Authorization", "value": "=Bearer {{$credentials.apiKey}}" }
-          ]
-        },
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "options": {}
       },
       "id": "fetch-sellers",
       "name": "Fetch all sellers (UUID map)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [420, 300],
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "REPLACE_WITH_HTTP_HEADER_AUTH_CRED",
-          "name": "Supabase API Key"
-        }
-      }
+      "position": [420, 300]
     },
     {
       "parameters": {
@@ -101,11 +90,11 @@
       "parameters": {
         "method": "POST",
         "url": "https://ltuarofidogdjhzosboe.supabase.co/rest/v1/seller_products",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "apikey", "value": "={{$credentials.apiKey}}" },
-            { "name": "Authorization", "value": "=Bearer {{$credentials.apiKey}}" },
             { "name": "Content-Type", "value": "application/json" },
             { "name": "Prefer", "value": "return=minimal" }
           ]
@@ -119,13 +108,7 @@
       "name": "POST batch to Supabase",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1960, 300],
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "REPLACE_WITH_HTTP_HEADER_AUTH_CRED",
-          "name": "Supabase API Key"
-        }
-      }
+      "position": [1960, 300]
     },
     {
       "parameters": {
