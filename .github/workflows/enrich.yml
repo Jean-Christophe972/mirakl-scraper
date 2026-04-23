@@ -1,0 +1,86 @@
+name: Enrich brands + scrape products
+
+# Triggers:
+#   • Manual button on GitHub Actions tab
+#   • Push a new CSV to data/input/batches/*.csv
+#   • Weekly cron (Monday 6am UTC) to refresh product catalogs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/input/batches/**.csv'
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write   # needed to commit back enriched JSON
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci || npm install
+
+      - name: Enrich new / failed brands
+        env:
+          OPENAI_API_KEY:  ${{ secrets.OPENAI_API_KEY }}
+          SCRAPERAPI_KEY:  ${{ secrets.SCRAPERAPI_KEY }}
+        run: node scripts/enrich.js --auto-proxy --concurrency=4
+
+      - name: Detect marketplaces (Google search)
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
+        run: node scripts/detect_marketplaces.js || true
+        # marketplace detection is best-effort, don't fail the run
+
+      - name: Scrape product catalogs
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
+        run: node scripts/scrape_products.js --auto-proxy --concurrency=4
+
+      - name: Retry empty catalogs (forced proxy)
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
+        run: node scripts/retry_empty_catalogs.js || true
+
+      - name: Build consolidated dataset + split per-brand
+        run: |
+          node scripts/build_consolidated.js
+          node scripts/split_products.js
+          node scripts/build_sql_dump.js || true
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/output/brands_enriched.json \
+                  data/output/mirakl_dataset.json \
+                  data/output/mirakl_dataset.sql \
+                  data/output/mirakl_dataset.sql.gz \
+                  data/output/products_index.json \
+                  data/output/products/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(auto): refresh enriched dataset [skip ci]"
+            git -c http.postBuffer=524288000 push origin HEAD
+          fi
+
+      - name: Trigger n8n sync (optional webhook)
+        if: env.N8N_WEBHOOK_URL != ''
+        env:
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$N8N_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"github-actions","status":"success"}'

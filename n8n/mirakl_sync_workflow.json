@@ -1,0 +1,236 @@
+{
+  "name": "Mirakl GitHub → Supabase Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule (Monday 8am)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 480]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/brands_enriched.json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "http-fetch-brands",
+      "name": "GET brands_enriched.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 380]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "brands",
+        "options": {}
+      },
+      "id": "split-brands",
+      "name": "Split brands array",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [660, 380]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableId": "brands",
+        "dataToSend": "autoMapInputData",
+        "matchingColumns": "brand_name",
+        "options": {}
+      },
+      "id": "supabase-upsert-brands",
+      "name": "Supabase — Upsert brands",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [880, 380],
+      "credentials": {
+        "supabaseApi": {
+          "id": "REPLACE_WITH_YOUR_SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase Mirakl"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products_index.json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "http-fetch-index",
+      "name": "GET products_index.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1120, 380]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "brands",
+        "options": {}
+      },
+      "id": "split-index",
+      "name": "Split per-brand entries",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [1340, 380]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-brands",
+      "name": "Loop over brands",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [1560, 380]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.file_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "http-fetch-brand-products",
+      "name": "GET brand product file",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1780, 380]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "products",
+        "options": {}
+      },
+      "id": "split-products",
+      "name": "Split products",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [2000, 380]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableId": "products",
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
+            { "fieldId": "brand_name",   "fieldValue": "={{ $json.brand_name }}" },
+            { "fieldId": "product_id",   "fieldValue": "={{ $json.id }}" },
+            { "fieldId": "handle",       "fieldValue": "={{ $json.handle }}" },
+            { "fieldId": "title",        "fieldValue": "={{ $json.title }}" },
+            { "fieldId": "product_type", "fieldValue": "={{ $json.product_type }}" },
+            { "fieldId": "tags",         "fieldValue": "={{ $json.tags }}" },
+            { "fieldId": "price_min",    "fieldValue": "={{ $json.price_min }}" },
+            { "fieldId": "price_max",    "fieldValue": "={{ $json.price_max }}" },
+            { "fieldId": "currency",     "fieldValue": "={{ $json.currency }}" },
+            { "fieldId": "available",    "fieldValue": "={{ $json.available }}" },
+            { "fieldId": "url",          "fieldValue": "={{ $json.url }}" },
+            { "fieldId": "vendor",       "fieldValue": "={{ $json.vendor }}" },
+            { "fieldId": "published_at", "fieldValue": "={{ $json.published_at }}" }
+          ]
+        },
+        "matchingColumns": "brand_name,product_id",
+        "options": {}
+      },
+      "id": "supabase-upsert-products",
+      "name": "Supabase — Upsert products",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2220, 380],
+      "credentials": {
+        "supabaseApi": {
+          "id": "REPLACE_WITH_YOUR_SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase Mirakl"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 📖 How to use this workflow\n\n1. **Create Supabase credentials** in n8n:\n   - Credentials → New → Supabase API\n   - Host: `https://[PROJECT].supabase.co`\n   - Service role key (not anon key!)\n2. **Link both Supabase nodes** to that credential\n3. **Run `supabase_schema.sql` once** in Supabase SQL Editor before the first sync\n4. **Test** with Manual Trigger before enabling the weekly schedule\n\nThe workflow:\n- Syncs 296 brands in ~10s\n- Then loops over 194 brand files to upsert ~153k products\n- Total run time: ~15-20 min on first run, faster afterwards (upsert = only changed rows touched)",
+        "height": 340,
+        "width": 460
+      },
+      "id": "sticky-note",
+      "name": "Usage notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [200, 40]
+    }
+  ],
+  "connections": {
+    "Schedule (Monday 8am)": {
+      "main": [[{ "node": "GET brands_enriched.json", "type": "main", "index": 0 }]]
+    },
+    "Manual Trigger": {
+      "main": [[{ "node": "GET brands_enriched.json", "type": "main", "index": 0 }]]
+    },
+    "GET brands_enriched.json": {
+      "main": [[{ "node": "Split brands array", "type": "main", "index": 0 }]]
+    },
+    "Split brands array": {
+      "main": [[{ "node": "Supabase — Upsert brands", "type": "main", "index": 0 }]]
+    },
+    "Supabase — Upsert brands": {
+      "main": [[{ "node": "GET products_index.json", "type": "main", "index": 0 }]]
+    },
+    "GET products_index.json": {
+      "main": [[{ "node": "Split per-brand entries", "type": "main", "index": 0 }]]
+    },
+    "Split per-brand entries": {
+      "main": [[{ "node": "Loop over brands", "type": "main", "index": 0 }]]
+    },
+    "Loop over brands": {
+      "main": [[{ "node": "GET brand product file", "type": "main", "index": 0 }]]
+    },
+    "GET brand product file": {
+      "main": [[{ "node": "Split products", "type": "main", "index": 0 }]]
+    },
+    "Split products": {
+      "main": [[{ "node": "Supabase — Upsert products", "type": "main", "index": 0 }]]
+    },
+    "Supabase — Upsert products": {
+      "main": [[{ "node": "Loop over brands", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": []
+}
