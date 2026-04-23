@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at": "2026-04-23T08:10:49.969Z",
-    "total_brands": 117,
-    "total_products": 89022,
-    "avg_products_per_brand": 761,
+    "generated_at": "2026-04-23T09:34:30.218Z",
+    "total_brands": 194,
+    "total_products": 153085,
+    "avg_products_per_brand": 789,
     "note": "For full product data of a brand, fetch file_url from the corresponding entry in brands[]."
   },
   "brands": [
@@ -101,6 +101,99 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/shay-furniture.json"
     },
     {
+      "brand_name": "Lulu and Georgia",
+      "brand_slug": "lulu-and-georgia",
+      "product_count": 5000,
+      "price_min": 7.2,
+      "price_max": 11048,
+      "price_avg": 987,
+      "top_product_types": [
+        {
+          "type": "Furniture",
+          "count": 1163
+        },
+        {
+          "type": "Lighting",
+          "count": 792
+        },
+        {
+          "type": "Decorative Accessories",
+          "count": 672
+        },
+        {
+          "type": "Sample",
+          "count": 663
+        },
+        {
+          "type": "Wall Décor + Mirrors",
+          "count": 573
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/lulu-and-georgia.json"
+    },
+    {
+      "brand_name": "Gymshark",
+      "brand_slug": "gymshark",
+      "product_count": 5000,
+      "price_min": 2.1,
+      "price_max": 170,
+      "price_avg": 26,
+      "top_product_types": [
+        {
+          "type": "Mens Shorts",
+          "count": 366
+        },
+        {
+          "type": "Womens Sports Bras",
+          "count": 344
+        },
+        {
+          "type": "Womens Leggings",
+          "count": 328
+        },
+        {
+          "type": "Mens Ss Tops",
+          "count": 305
+        },
+        {
+          "type": "Womens Shorts",
+          "count": 300
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/gymshark.json"
+    },
+    {
+      "brand_name": "Bobo Choses",
+      "brand_slug": "bobo-choses",
+      "product_count": 5000,
+      "price_min": 4,
+      "price_max": 1000,
+      "price_avg": 519,
+      "top_product_types": [
+        {
+          "type": "Samples",
+          "count": 2328
+        },
+        {
+          "type": "ACCESSORIES",
+          "count": 242
+        },
+        {
+          "type": "Trousers",
+          "count": 229
+        },
+        {
+          "type": "T-SHIRT",
+          "count": 199
+        },
+        {
+          "type": "Sweatshirts",
+          "count": 154
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/bobo-choses.json"
+    },
+    {
       "brand_name": "Tibi",
       "brand_slug": "tibi",
       "product_count": 3554,
@@ -132,6 +225,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/tibi.json"
     },
     {
+      "brand_name": "Alo Yoga",
+      "brand_slug": "alo-yoga",
+      "product_count": 3489,
+      "price_min": 2,
+      "price_max": 3600,
+      "price_avg": 163,
+      "top_product_types": [
+        {
+          "type": "Women:Bras",
+          "count": 259
+        },
+        {
+          "type": "Women:Outerwear:Jackets",
+          "count": 258
+        },
+        {
+          "type": "Women:Bottoms:Leggings",
+          "count": 253
+        },
+        {
+          "type": "Women:Bottoms:Shorts",
+          "count": 176
+        },
+        {
+          "type": "Women:Bottoms:Pants",
+          "count": 166
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/alo-yoga.json"
+    },
+    {
       "brand_name": "GABRIELA HEARST",
       "brand_slug": "gabriela-hearst",
       "product_count": 3285,
@@ -161,6 +285,52 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/gabriela-hearst.json"
+    },
+    {
+      "brand_name": "Ferm Living",
+      "brand_slug": "ferm-living",
+      "product_count": 3139,
+      "price_min": 4,
+      "price_max": 5425,
+      "price_avg": 673,
+      "top_product_types": [
+        {
+          "type": "Gift Card",
+          "count": 3
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ferm-living.json"
+    },
+    {
+      "brand_name": "Caddis",
+      "brand_slug": "caddis",
+      "product_count": 2487,
+      "price_min": 8,
+      "price_max": 590,
+      "price_avg": 273,
+      "top_product_types": [
+        {
+          "type": "Custom Single Vision Readers",
+          "count": 293
+        },
+        {
+          "type": "Custom Progressive Readers",
+          "count": 240
+        },
+        {
+          "type": "Single Vision Readers",
+          "count": 200
+        },
+        {
+          "type": "Progressive Readers",
+          "count": 190
+        },
+        {
+          "type": "Prescription Progressive Glasses",
+          "count": 156
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/caddis.json"
     },
     {
       "brand_name": "The Frankie Shop",
@@ -256,6 +426,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/james-perse.json"
     },
     {
+      "brand_name": "M.Gemi",
+      "brand_slug": "m-gemi",
+      "product_count": 2203,
+      "price_min": 20,
+      "price_max": 578,
+      "price_avg": 157,
+      "top_product_types": [
+        {
+          "type": "Flat",
+          "count": 563
+        },
+        {
+          "type": "Sandal",
+          "count": 451
+        },
+        {
+          "type": "Pump",
+          "count": 252
+        },
+        {
+          "type": "Moccasin",
+          "count": 188
+        },
+        {
+          "type": "Sneaker",
+          "count": 137
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/m-gemi.json"
+    },
+    {
       "brand_name": "The Row",
       "brand_slug": "the-row",
       "product_count": 2115,
@@ -285,6 +486,68 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/the-row.json"
+    },
+    {
+      "brand_name": "Beyond Yoga",
+      "brand_slug": "beyond-yoga",
+      "product_count": 2003,
+      "price_min": 15,
+      "price_max": 13100,
+      "price_avg": 795,
+      "top_product_types": [
+        {
+          "type": "Cropped Tanks",
+          "count": 211
+        },
+        {
+          "type": "Midi",
+          "count": 203
+        },
+        {
+          "type": "Shorts",
+          "count": 200
+        },
+        {
+          "type": "Pants",
+          "count": 183
+        },
+        {
+          "type": "Bras",
+          "count": 140
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/beyond-yoga.json"
+    },
+    {
+      "brand_name": "Coyuchi",
+      "brand_slug": "coyuchi",
+      "product_count": 1885,
+      "price_min": 1,
+      "price_max": 2240,
+      "price_avg": 129,
+      "top_product_types": [
+        {
+          "type": "Sham",
+          "count": 130
+        },
+        {
+          "type": "Consumer Swatch",
+          "count": 112
+        },
+        {
+          "type": "Pillowcases",
+          "count": 91
+        },
+        {
+          "type": "Duvet Cover",
+          "count": 89
+        },
+        {
+          "type": "Sham - Renewed",
+          "count": 88
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/coyuchi.json"
     },
     {
       "brand_name": "AJE",
@@ -318,6 +581,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/aje.json"
     },
     {
+      "brand_name": "Tartine et Chocolat",
+      "brand_slug": "tartine-et-chocolat",
+      "product_count": 1843,
+      "price_min": 7,
+      "price_max": 2035,
+      "price_avg": 129,
+      "top_product_types": [
+        {
+          "type": "Accessoires",
+          "count": 154
+        },
+        {
+          "type": "Robes",
+          "count": 150
+        },
+        {
+          "type": "Shorts",
+          "count": 127
+        },
+        {
+          "type": "Pantalons",
+          "count": 102
+        },
+        {
+          "type": "T-shirts",
+          "count": 98
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/tartine-et-chocolat.json"
+    },
+    {
       "brand_name": "STONE AND STRAND",
       "brand_slug": "stone-and-strand",
       "product_count": 1794,
@@ -349,6 +643,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/stone-and-strand.json"
     },
     {
+      "brand_name": "Bonpoint",
+      "brand_slug": "bonpoint",
+      "product_count": 1789,
+      "price_min": 5,
+      "price_max": 950,
+      "price_avg": 133,
+      "top_product_types": [
+        {
+          "type": "permanent",
+          "count": 249
+        },
+        {
+          "type": "accessoires",
+          "count": 158
+        },
+        {
+          "type": "engraving",
+          "count": 2
+        },
+        {
+          "type": "ceremonie",
+          "count": 1
+        },
+        {
+          "type": "gift_card",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/bonpoint.json"
+    },
+    {
+      "brand_name": "Astrid & Miyu",
+      "brand_slug": "astrid-miyu",
+      "product_count": 1771,
+      "price_min": 3,
+      "price_max": 1950,
+      "price_avg": 175,
+      "top_product_types": [
+        {
+          "type": "Welding Charm",
+          "count": 192
+        },
+        {
+          "type": "Stud Earrings",
+          "count": 144
+        },
+        {
+          "type": "Pendant Necklace",
+          "count": 140
+        },
+        {
+          "type": "Piercing Stud",
+          "count": 109
+        },
+        {
+          "type": "Hoop Earrings",
+          "count": 103
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/astrid-miyu.json"
+    },
+    {
       "brand_name": "Ready to Wear",
       "brand_slug": "ready-to-wear",
       "product_count": 1750,
@@ -378,6 +734,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ready-to-wear.json"
+    },
+    {
+      "brand_name": "Oliver Peoples",
+      "brand_slug": "oliver-peoples",
+      "product_count": 1604,
+      "price_min": 32,
+      "price_max": 5455,
+      "price_avg": 551,
+      "top_product_types": [
+        {
+          "type": "Sun",
+          "count": 769
+        },
+        {
+          "type": "Optical",
+          "count": 573
+        },
+        {
+          "type": "Rox_lens",
+          "count": 227
+        },
+        {
+          "type": "Accessories",
+          "count": 18
+        },
+        {
+          "type": "Clip-on",
+          "count": 17
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/oliver-peoples.json"
     },
     {
       "brand_name": "Olympia Le-Tan",
@@ -440,6 +827,64 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/brent-neale.json"
+    },
+    {
+      "brand_name": "Jonathan Adler",
+      "brand_slug": "jonathan-adler",
+      "product_count": 1478,
+      "price_min": 7.99,
+      "price_max": 16500,
+      "price_avg": 1197,
+      "top_product_types": [
+        {
+          "type": "Print",
+          "count": 183
+        },
+        {
+          "type": "Swatch",
+          "count": 117
+        },
+        {
+          "type": "Pillow",
+          "count": 81
+        },
+        {
+          "type": "Vase",
+          "count": 65
+        },
+        {
+          "type": "Decorative Tray",
+          "count": 60
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/jonathan-adler.json"
+    },
+    {
+      "brand_name": "P.E Nation",
+      "brand_slug": "p-e-nation",
+      "product_count": 1403,
+      "price_min": 7.5,
+      "price_max": 499,
+      "price_avg": 67,
+      "top_product_types": [
+        {
+          "type": "New Collection",
+          "count": 271
+        },
+        {
+          "type": "Shorts",
+          "count": 8
+        },
+        {
+          "type": "E-Gift Voucher",
+          "count": 4
+        },
+        {
+          "type": "Clothing",
+          "count": 2
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/p-e-nation.json"
     },
     {
       "brand_name": "Matteo",
@@ -612,6 +1057,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/carlo-moretti.json"
     },
     {
+      "brand_name": "A.P.C.",
+      "brand_slug": "a-p-c",
+      "product_count": 1237,
+      "price_min": 10,
+      "price_max": 790,
+      "price_avg": 230,
+      "top_product_types": [
+        {
+          "type": "Prêt-à-porter",
+          "count": 644
+        },
+        {
+          "type": "Sac",
+          "count": 360
+        },
+        {
+          "type": "Accessoire",
+          "count": 133
+        },
+        {
+          "type": "Maison",
+          "count": 51
+        },
+        {
+          "type": "Chaussure",
+          "count": 43
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/a-p-c.json"
+    },
+    {
+      "brand_name": "Parachute",
+      "brand_slug": "parachute",
+      "product_count": 1214,
+      "price_min": 3,
+      "price_max": 1550,
+      "price_avg": 248,
+      "top_product_types": [
+        {
+          "type": "Towel Bundles, Towels",
+          "count": 112
+        },
+        {
+          "type": "Bed Bundles",
+          "count": 101
+        },
+        {
+          "type": "Sheet Sets, Sheets",
+          "count": 88
+        },
+        {
+          "type": "Duvet Covers, Duvet Cover Sets, Sheeting",
+          "count": 74
+        },
+        {
+          "type": "Duvet Cover Sets",
+          "count": 56
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/parachute.json"
+    },
+    {
       "brand_name": "Christian Siriano",
       "brand_slug": "christian-siriano",
       "product_count": 1174,
@@ -720,6 +1227,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/sensi-studio.json"
     },
     {
+      "brand_name": "Sunspel",
+      "brand_slug": "sunspel",
+      "product_count": 1047,
+      "price_min": 8,
+      "price_max": 1295,
+      "price_avg": 186,
+      "top_product_types": [
+        {
+          "type": "Mens T-Shirt",
+          "count": 181
+        },
+        {
+          "type": "Mens Polo Shirt",
+          "count": 148
+        },
+        {
+          "type": "Mens Knitwear",
+          "count": 133
+        },
+        {
+          "type": "Accessories",
+          "count": 112
+        },
+        {
+          "type": "Mens Underwear Bottom",
+          "count": 83
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/sunspel.json"
+    },
+    {
+      "brand_name": "Métier London",
+      "brand_slug": "metier-london",
+      "product_count": 1042,
+      "price_min": 45,
+      "price_max": 5450,
+      "price_avg": 1841,
+      "top_product_types": [
+        {
+          "type": "Day Bags",
+          "count": 143
+        },
+        {
+          "type": "LLG",
+          "count": 89
+        },
+        {
+          "type": "Home",
+          "count": 86
+        },
+        {
+          "type": "Packing Pouches",
+          "count": 47
+        },
+        {
+          "type": "Small Leather Goods",
+          "count": 42
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/metier-london.json"
+    },
+    {
       "brand_name": "Cabana Magazine",
       "brand_slug": "cabana-magazine",
       "product_count": 1033,
@@ -751,6 +1320,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/cabana-magazine.json"
     },
     {
+      "brand_name": "Completedworks",
+      "brand_slug": "completedworks",
+      "product_count": 1029,
+      "price_min": 5,
+      "price_max": 18700,
+      "price_avg": 906,
+      "top_product_types": [
+        {
+          "type": "Earrings",
+          "count": 359
+        },
+        {
+          "type": "Necklace",
+          "count": 227
+        },
+        {
+          "type": "Rings",
+          "count": 99
+        },
+        {
+          "type": "Bracelet",
+          "count": 98
+        },
+        {
+          "type": "Glass",
+          "count": 46
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/completedworks.json"
+    },
+    {
       "brand_name": "PF24",
       "brand_slug": "pf24",
       "product_count": 1017,
@@ -780,6 +1380,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/pf24.json"
+    },
+    {
+      "brand_name": "Seafolly",
+      "brand_slug": "seafolly",
+      "product_count": 1012,
+      "price_min": 15,
+      "price_max": 230,
+      "price_avg": 93,
+      "top_product_types": [
+        {
+          "type": "Swimwear",
+          "count": 618
+        },
+        {
+          "type": "Overswim",
+          "count": 201
+        },
+        {
+          "type": "Accessories",
+          "count": 105
+        },
+        {
+          "type": "Childrens",
+          "count": 84
+        },
+        {
+          "type": "Gift Cards",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/seafolly.json"
     },
     {
       "brand_name": "Drake's",
@@ -844,6 +1475,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/cinq-a-sept.json"
     },
     {
+      "brand_name": "Aurate",
+      "brand_slug": "aurate",
+      "product_count": 989,
+      "price_min": 13,
+      "price_max": 19800,
+      "price_avg": 4512,
+      "top_product_types": [
+        {
+          "type": "Ring",
+          "count": 228
+        },
+        {
+          "type": "Earring",
+          "count": 207
+        },
+        {
+          "type": "Necklace",
+          "count": 178
+        },
+        {
+          "type": "Bracelet",
+          "count": 142
+        },
+        {
+          "type": "Child",
+          "count": 119
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/aurate.json"
+    },
+    {
       "brand_name": "El Sol",
       "brand_slug": "el-sol",
       "product_count": 971,
@@ -873,6 +1535,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/el-sol.json"
+    },
+    {
+      "brand_name": "Gorjana",
+      "brand_slug": "gorjana",
+      "product_count": 895,
+      "price_min": 12,
+      "price_max": 5615,
+      "price_avg": 281,
+      "top_product_types": [
+        {
+          "type": "Earrings",
+          "count": 306
+        },
+        {
+          "type": "Necklaces",
+          "count": 257
+        },
+        {
+          "type": "Charms",
+          "count": 143
+        },
+        {
+          "type": "Bracelets",
+          "count": 105
+        },
+        {
+          "type": "Rings",
+          "count": 72
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/gorjana.json"
     },
     {
       "brand_name": "Aimé Leon Dore",
@@ -968,6 +1661,99 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ulla-johnson.json"
     },
     {
+      "brand_name": "Aspesi",
+      "brand_slug": "aspesi",
+      "product_count": 805,
+      "price_min": 29,
+      "price_max": 1090,
+      "price_avg": 324,
+      "top_product_types": [
+        {
+          "type": "Uomo / Abbigliamento / camicie",
+          "count": 94
+        },
+        {
+          "type": "Donna / Abbigliamento / camicie",
+          "count": 93
+        },
+        {
+          "type": "Donna / Abbigliamento / pantaloni",
+          "count": 80
+        },
+        {
+          "type": "Donna / Abbigliamento / maglie",
+          "count": 50
+        },
+        {
+          "type": "Uomo / Abbigliamento / giubbotti",
+          "count": 40
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/aspesi.json"
+    },
+    {
+      "brand_name": "Cuyana",
+      "brand_slug": "cuyana",
+      "product_count": 782,
+      "price_min": 5,
+      "price_max": 19500,
+      "price_avg": 1520,
+      "top_product_types": [
+        {
+          "type": "Small Leather Goods",
+          "count": 231
+        },
+        {
+          "type": "Bags",
+          "count": 184
+        },
+        {
+          "type": "Jewelry",
+          "count": 55
+        },
+        {
+          "type": "Tops",
+          "count": 50
+        },
+        {
+          "type": "Lounge",
+          "count": 45
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/cuyana.json"
+    },
+    {
+      "brand_name": "Varley",
+      "brand_slug": "varley",
+      "product_count": 780,
+      "price_min": 20,
+      "price_max": 568,
+      "price_avg": 151,
+      "top_product_types": [
+        {
+          "type": "Apparel",
+          "count": 316
+        },
+        {
+          "type": "Accessories",
+          "count": 99
+        },
+        {
+          "type": "Sweater",
+          "count": 52
+        },
+        {
+          "type": "Knitwear",
+          "count": 37
+        },
+        {
+          "type": "Bras & Tops",
+          "count": 34
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/varley.json"
+    },
+    {
       "brand_name": "Yves Salomon",
       "brand_slug": "yves-salomon",
       "product_count": 774,
@@ -1028,6 +1814,47 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/orlebar-brown.json"
+    },
+    {
+      "brand_name": "Kiki de Montparnasse",
+      "brand_slug": "kiki-de-montparnasse",
+      "product_count": 719,
+      "price_min": 13.08,
+      "price_max": 2179.28,
+      "price_avg": 300,
+      "top_product_types": [
+        {
+          "type": "PANTY",
+          "count": 126
+        },
+        {
+          "type": "BRA",
+          "count": 122
+        },
+        {
+          "type": "DRESS/SLIP",
+          "count": 67
+        },
+        {
+          "type": "TOP",
+          "count": 62
+        },
+        {
+          "type": "BIKINI BOTTOM",
+          "count": 41
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/kiki-de-montparnasse.json"
+    },
+    {
+      "brand_name": "AMI Paris",
+      "brand_slug": "ami-paris",
+      "product_count": 703,
+      "price_min": 45,
+      "price_max": 1900,
+      "price_avg": 436,
+      "top_product_types": [],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ami-paris.json"
     },
     {
       "brand_name": "Judith Leiber Couture",
@@ -1154,6 +1981,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/oseree.json"
     },
     {
+      "brand_name": "Solid & Striped",
+      "brand_slug": "solid-striped",
+      "product_count": 669,
+      "price_min": 49,
+      "price_max": 545,
+      "price_avg": 177,
+      "top_product_types": [
+        {
+          "type": "Dresses",
+          "count": 133
+        },
+        {
+          "type": "Bikini Bottoms",
+          "count": 118
+        },
+        {
+          "type": "Bikini Tops",
+          "count": 117
+        },
+        {
+          "type": "Shirts & Tops",
+          "count": 92
+        },
+        {
+          "type": "One-Pieces",
+          "count": 68
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/solid-striped.json"
+    },
+    {
+      "brand_name": "Eberjey",
+      "brand_slug": "eberjey",
+      "product_count": 655,
+      "price_min": 14,
+      "price_max": 505,
+      "price_avg": 194,
+      "top_product_types": [
+        {
+          "type": "Gisele",
+          "count": 167
+        },
+        {
+          "type": "Silk",
+          "count": 133
+        },
+        {
+          "type": "Lounge",
+          "count": 114
+        },
+        {
+          "type": "Other Sleepwear",
+          "count": 68
+        },
+        {
+          "type": "Mens",
+          "count": 60
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/eberjey.json"
+    },
+    {
       "brand_name": "arch4",
       "brand_slug": "arch4",
       "product_count": 647,
@@ -1185,6 +2074,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/arch4.json"
     },
     {
+      "brand_name": "Caramel",
+      "brand_slug": "caramel",
+      "product_count": 636,
+      "price_min": 4,
+      "price_max": 1217,
+      "price_avg": 189,
+      "top_product_types": [
+        {
+          "type": "DRESSES",
+          "count": 75
+        },
+        {
+          "type": "SHIRTS & LONG-SLEEVES",
+          "count": 50
+        },
+        {
+          "type": "JUMPERS & SWEATERS",
+          "count": 46
+        },
+        {
+          "type": "TABLE LINEN",
+          "count": 30
+        },
+        {
+          "type": "SKIRTS",
+          "count": 29
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/caramel.json"
+    },
+    {
+      "brand_name": "Le Specs",
+      "brand_slug": "le-specs",
+      "product_count": 630,
+      "price_min": 4.99,
+      "price_max": 220,
+      "price_avg": 79,
+      "top_product_types": [
+        {
+          "type": "Le Specs",
+          "count": 493
+        },
+        {
+          "type": "Le Specs Luxe",
+          "count": 38
+        },
+        {
+          "type": "Le Specs Blue Light",
+          "count": 22
+        },
+        {
+          "type": "Le Specs Alemais",
+          "count": 18
+        },
+        {
+          "type": "Le Specs Optical",
+          "count": 14
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/le-specs.json"
+    },
+    {
       "brand_name": "Nili Lotan",
       "brand_slug": "nili-lotan",
       "product_count": 625,
@@ -1214,6 +2165,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/nili-lotan.json"
+    },
+    {
+      "brand_name": "Rothy's",
+      "brand_slug": "rothy-s",
+      "product_count": 619,
+      "price_min": 15,
+      "price_max": 399,
+      "price_avg": 134,
+      "top_product_types": [
+        {
+          "type": "The Casual Clog",
+          "count": 15
+        },
+        {
+          "type": "The Point II",
+          "count": 14
+        },
+        {
+          "type": "The Almond Slingback",
+          "count": 14
+        },
+        {
+          "type": "The Lightweight Tote",
+          "count": 11
+        },
+        {
+          "type": "The Lightweight Zip Tote",
+          "count": 10
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/rothy-s.json"
     },
     {
       "brand_name": "Tove Studio",
@@ -1491,6 +2473,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/eterne.json"
     },
     {
+      "brand_name": "Hunza G",
+      "brand_slug": "hunza-g",
+      "product_count": 538,
+      "price_min": 20,
+      "price_max": 560,
+      "price_avg": 233,
+      "top_product_types": [
+        {
+          "type": "Swimsuit",
+          "count": 162
+        },
+        {
+          "type": "Bikini",
+          "count": 161
+        },
+        {
+          "type": "Ready-to-wear",
+          "count": 66
+        },
+        {
+          "type": "Accessories",
+          "count": 60
+        },
+        {
+          "type": "Hunza G Kids",
+          "count": 53
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/hunza-g.json"
+    },
+    {
+      "brand_name": "Officine Générale",
+      "brand_slug": "officine-generale",
+      "product_count": 534,
+      "price_min": 30,
+      "price_max": 1095,
+      "price_avg": 274,
+      "top_product_types": [
+        {
+          "type": "TAILORING",
+          "count": 26
+        },
+        {
+          "type": "JEAN",
+          "count": 24
+        },
+        {
+          "type": "SHIRT",
+          "count": 22
+        },
+        {
+          "type": "TEE-SHIRT",
+          "count": 22
+        },
+        {
+          "type": "KNITWEAR",
+          "count": 20
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/officine-generale.json"
+    },
+    {
       "brand_name": "Robinson Pelham",
       "brand_slug": "robinson-pelham",
       "product_count": 512,
@@ -1551,6 +2595,37 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/r13.json"
+    },
+    {
+      "brand_name": "Cubitts",
+      "brand_slug": "cubitts",
+      "product_count": 488,
+      "price_min": 10,
+      "price_max": 675,
+      "price_avg": 143,
+      "top_product_types": [
+        {
+          "type": "Spectacles",
+          "count": 166
+        },
+        {
+          "type": "Sunglasses",
+          "count": 121
+        },
+        {
+          "type": "Mazz colour Chip",
+          "count": 56
+        },
+        {
+          "type": "Accessories",
+          "count": 52
+        },
+        {
+          "type": "Clip-Ons",
+          "count": 43
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/cubitts.json"
     },
     {
       "brand_name": "Kall Meyer",
@@ -1749,6 +2824,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/edition.json"
     },
     {
+      "brand_name": "Brooklinen",
+      "brand_slug": "brooklinen",
+      "product_count": 450,
+      "price_min": 7.25,
+      "price_max": 1084,
+      "price_avg": 187,
+      "top_product_types": [
+        {
+          "type": "Bedding",
+          "count": 168
+        },
+        {
+          "type": "Towels",
+          "count": 80
+        },
+        {
+          "type": "Blanket",
+          "count": 37
+        },
+        {
+          "type": "Content",
+          "count": 31
+        },
+        {
+          "type": "Accessories",
+          "count": 19
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/brooklinen.json"
+    },
+    {
       "brand_name": "SASUPHI",
       "brand_slug": "sasuphi",
       "product_count": 442,
@@ -1904,6 +3010,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/altuzarra.json"
     },
     {
+      "brand_name": "Onia",
+      "brand_slug": "onia",
+      "product_count": 417,
+      "price_min": 21.83,
+      "price_max": 694.95,
+      "price_avg": 160,
+      "top_product_types": [
+        {
+          "type": "Short",
+          "count": 65
+        },
+        {
+          "type": "Shirt",
+          "count": 41
+        },
+        {
+          "type": "Pant",
+          "count": 38
+        },
+        {
+          "type": "Top",
+          "count": 38
+        },
+        {
+          "type": "Polo",
+          "count": 35
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/onia.json"
+    },
+    {
       "brand_name": "Carolina Bucci",
       "brand_slug": "carolina-bucci",
       "product_count": 415,
@@ -2028,6 +3165,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/laura-lombardi.json"
     },
     {
+      "brand_name": "Oliver Cabell",
+      "brand_slug": "oliver-cabell",
+      "product_count": 395,
+      "price_min": 12.99,
+      "price_max": 314.98,
+      "price_avg": 196,
+      "top_product_types": [
+        {
+          "type": "Male",
+          "count": 238
+        },
+        {
+          "type": "Female",
+          "count": 122
+        },
+        {
+          "type": "Jewelry",
+          "count": 14
+        },
+        {
+          "type": "Shoecare & Accessories",
+          "count": 12
+        },
+        {
+          "type": "Gift Cards",
+          "count": 4
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/oliver-cabell.json"
+    },
+    {
       "brand_name": "Lisa Yang",
       "brand_slug": "lisa-yang",
       "product_count": 389,
@@ -2090,6 +3258,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/maison-mayle.json"
     },
     {
+      "brand_name": "Moscot",
+      "brand_slug": "moscot",
+      "product_count": 383,
+      "price_min": 5,
+      "price_max": 890,
+      "price_avg": 314,
+      "top_product_types": [
+        {
+          "type": "OPTICAL",
+          "count": 126
+        },
+        {
+          "type": "SUN",
+          "count": 114
+        },
+        {
+          "type": "TINT",
+          "count": 44
+        },
+        {
+          "type": "LENS",
+          "count": 28
+        },
+        {
+          "type": "CLIP",
+          "count": 21
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/moscot.json"
+    },
+    {
       "brand_name": "BPE",
       "brand_slug": "bpe",
       "product_count": 375,
@@ -2150,6 +3349,68 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ruslan-baginskiy.json"
+    },
+    {
+      "brand_name": "Strathberry",
+      "brand_slug": "strathberry",
+      "product_count": 359,
+      "price_min": 5,
+      "price_max": 695,
+      "price_avg": 286,
+      "top_product_types": [
+        {
+          "type": "Silk Skinny Scarf",
+          "count": 34
+        },
+        {
+          "type": "Mini Tote",
+          "count": 18
+        },
+        {
+          "type": "Mosaic Nano",
+          "count": 16
+        },
+        {
+          "type": "Mosaic Bag",
+          "count": 15
+        },
+        {
+          "type": "Midi Tote",
+          "count": 9
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/strathberry.json"
+    },
+    {
+      "brand_name": "Outdoor Voices",
+      "brand_slug": "outdoor-voices",
+      "product_count": 354,
+      "price_min": 12,
+      "price_max": 298,
+      "price_avg": 69,
+      "top_product_types": [
+        {
+          "type": "Pants",
+          "count": 60
+        },
+        {
+          "type": "Shortsleeve",
+          "count": 48
+        },
+        {
+          "type": "Shorts",
+          "count": 42
+        },
+        {
+          "type": "2nd Layer",
+          "count": 33
+        },
+        {
+          "type": "Bras",
+          "count": 30
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/outdoor-voices.json"
     },
     {
       "brand_name": "Paris Texas",
@@ -2276,6 +3537,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/by-pariah.json"
     },
     {
+      "brand_name": "The Animals Observatory",
+      "brand_slug": "the-animals-observatory",
+      "product_count": 319,
+      "price_min": 3.5,
+      "price_max": 15200,
+      "price_avg": 1163,
+      "top_product_types": [
+        {
+          "type": "SS26_KIDS",
+          "count": 196
+        },
+        {
+          "type": "SS26_BABY",
+          "count": 48
+        },
+        {
+          "type": "SS26_ACCESSORIES",
+          "count": 29
+        },
+        {
+          "type": "PRE SPRING 26",
+          "count": 22
+        },
+        {
+          "type": "SS26_ADULT",
+          "count": 6
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/the-animals-observatory.json"
+    },
+    {
       "brand_name": "Andrea Fohrman",
       "brand_slug": "andrea-fohrman",
       "product_count": 310,
@@ -2398,6 +3690,47 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/berceau.json"
+    },
+    {
+      "brand_name": "Girlfriend Collective",
+      "brand_slug": "girlfriend-collective",
+      "product_count": 297,
+      "price_min": 17.4,
+      "price_max": 148,
+      "price_avg": 50,
+      "top_product_types": [
+        {
+          "type": "Compressive High-Rise Legging",
+          "count": 13
+        },
+        {
+          "type": "High-Rise Bike Short",
+          "count": 13
+        },
+        {
+          "type": "Tina Open Back Unitard",
+          "count": 10
+        },
+        {
+          "type": "Compressive Pocket Legging",
+          "count": 10
+        },
+        {
+          "type": "Dylan Tank Bra",
+          "count": 9
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/girlfriend-collective.json"
+    },
+    {
+      "brand_name": "Barena Venezia",
+      "brand_slug": "barena-venezia",
+      "product_count": 296,
+      "price_min": 45,
+      "price_max": 1900,
+      "price_avg": 396,
+      "top_product_types": [],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/barena-venezia.json"
     },
     {
       "brand_name": "Mary Katrantzou",
@@ -2640,6 +3973,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/bondi-born.json"
     },
     {
+      "brand_name": "Mansur Gavriel",
+      "brand_slug": "mansur-gavriel",
+      "product_count": 251,
+      "price_min": 380,
+      "price_max": 19300,
+      "price_avg": 11333,
+      "top_product_types": [
+        {
+          "type": "Drawstring Cabas",
+          "count": 10
+        },
+        {
+          "type": "Dream Ballerina",
+          "count": 8
+        },
+        {
+          "type": "Gaia Shoulder Bag",
+          "count": 8
+        },
+        {
+          "type": "Mini Cloud Clutch",
+          "count": 7
+        },
+        {
+          "type": "Drawstring Pouchette",
+          "count": 6
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/mansur-gavriel.json"
+    },
+    {
       "brand_name": "Taller Marmo",
       "brand_slug": "taller-marmo",
       "product_count": 243,
@@ -2880,6 +4244,68 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/god-s-true-cashmere.json"
     },
     {
+      "brand_name": "Neom Organics",
+      "brand_slug": "neom-organics",
+      "product_count": 193,
+      "price_min": 0.4,
+      "price_max": 316,
+      "price_avg": 47,
+      "top_product_types": [
+        {
+          "type": "Collection",
+          "count": 46
+        },
+        {
+          "type": "Essential Oil Blend",
+          "count": 12
+        },
+        {
+          "type": "Wellbeing Discovery",
+          "count": 10
+        },
+        {
+          "type": "Magnesium Body Butter",
+          "count": 7
+        },
+        {
+          "type": "Body Wash",
+          "count": 7
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/neom-organics.json"
+    },
+    {
+      "brand_name": "Garrett Leight",
+      "brand_slug": "garrett-leight",
+      "product_count": 192,
+      "price_min": 10,
+      "price_max": 685,
+      "price_avg": 330,
+      "top_product_types": [
+        {
+          "type": "Optical",
+          "count": 83
+        },
+        {
+          "type": "Sunglasses",
+          "count": 80
+        },
+        {
+          "type": "Clip",
+          "count": 14
+        },
+        {
+          "type": "Extras",
+          "count": 13
+        },
+        {
+          "type": "Gift Card",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/garrett-leight.json"
+    },
+    {
       "brand_name": "MARRAKSHI LIFE",
       "brand_slug": "marrakshi-life",
       "product_count": 190,
@@ -3035,6 +4461,47 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/maygel-coronel.json"
     },
     {
+      "brand_name": "Husbands",
+      "brand_slug": "husbands",
+      "product_count": 178,
+      "price_min": 1,
+      "price_max": 2400,
+      "price_avg": 698,
+      "top_product_types": [],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/husbands.json"
+    },
+    {
+      "brand_name": "Grown Alchemist",
+      "brand_slug": "grown-alchemist",
+      "product_count": 178,
+      "price_min": 6,
+      "price_max": 780,
+      "price_avg": 60,
+      "top_product_types": [
+        {
+          "type": "Skincare",
+          "count": 38
+        },
+        {
+          "type": "Travel Size",
+          "count": 27
+        },
+        {
+          "type": "Hand Care",
+          "count": 21
+        },
+        {
+          "type": "Bundles",
+          "count": 20
+        },
+        {
+          "type": "Bodycare",
+          "count": 14
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/grown-alchemist.json"
+    },
+    {
       "brand_name": "Ortovox",
       "brand_slug": "ortovox",
       "product_count": 173,
@@ -3066,6 +4533,91 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ortovox.json"
     },
     {
+      "brand_name": "Slip",
+      "brand_slug": "slip",
+      "product_count": 153,
+      "price_min": 13,
+      "price_max": 578,
+      "price_avg": 103,
+      "top_product_types": [
+        {
+          "type": "Scrunchie",
+          "count": 53
+        },
+        {
+          "type": "pillowcase",
+          "count": 30
+        },
+        {
+          "type": "pillowcase king",
+          "count": 14
+        },
+        {
+          "type": "Contour Sleep Mask",
+          "count": 13
+        },
+        {
+          "type": "sleep mask",
+          "count": 13
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/slip.json"
+    },
+    {
+      "brand_name": "This Works",
+      "brand_slug": "this-works",
+      "product_count": 153,
+      "price_min": 8,
+      "price_max": 144,
+      "price_avg": 31,
+      "top_product_types": [
+        {
+          "type": "Deep Sleep",
+          "count": 33
+        },
+        {
+          "type": "Perfect",
+          "count": 27
+        },
+        {
+          "type": "In Transit",
+          "count": 17
+        },
+        {
+          "type": "My Wrinkles",
+          "count": 14
+        },
+        {
+          "type": "Christmas",
+          "count": 11
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/this-works.json"
+    },
+    {
+      "brand_name": "Wandler",
+      "brand_slug": "wandler",
+      "product_count": 147,
+      "price_min": 55,
+      "price_max": 995,
+      "price_avg": 574,
+      "top_product_types": [
+        {
+          "type": "BAGS",
+          "count": 128
+        },
+        {
+          "type": "SMALL LEATHER GOODS",
+          "count": 18
+        },
+        {
+          "type": "DERDEN",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/wandler.json"
+    },
+    {
       "brand_name": "Calle Del Mar LLC",
       "brand_slug": "calle-del-mar-llc",
       "product_count": 146,
@@ -3074,6 +4626,37 @@
       "price_avg": 1098,
       "top_product_types": [],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/calle-del-mar-llc.json"
+    },
+    {
+      "brand_name": "Glossier",
+      "brand_slug": "glossier",
+      "product_count": 135,
+      "price_min": 5,
+      "price_max": 139,
+      "price_avg": 37,
+      "top_product_types": [
+        {
+          "type": "Makeup",
+          "count": 43
+        },
+        {
+          "type": "Fragrance",
+          "count": 26
+        },
+        {
+          "type": "Merch",
+          "count": 21
+        },
+        {
+          "type": "Skincare",
+          "count": 18
+        },
+        {
+          "type": "Body",
+          "count": 12
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/glossier.json"
     },
     {
       "brand_name": "DÉHANCHE",
@@ -3130,6 +4713,37 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/s-s-daley.json"
     },
     {
+      "brand_name": "Fisch",
+      "brand_slug": "fisch",
+      "product_count": 133,
+      "price_min": 8.67,
+      "price_max": 433.95,
+      "price_avg": 131,
+      "top_product_types": [
+        {
+          "type": "TOPS",
+          "count": 20
+        },
+        {
+          "type": "ONE PIECE",
+          "count": 15
+        },
+        {
+          "type": "BOTTOMS",
+          "count": 13
+        },
+        {
+          "type": "BOTTOM",
+          "count": 9
+        },
+        {
+          "type": "Gift Card",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/fisch.json"
+    },
+    {
       "brand_name": "Borgo de Nor",
       "brand_slug": "borgo-de-nor",
       "product_count": 131,
@@ -3161,6 +4775,109 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/borgo-de-nor.json"
     },
     {
+      "brand_name": "Tatcha",
+      "brand_slug": "tatcha",
+      "product_count": 131,
+      "price_min": 5,
+      "price_max": 1200,
+      "price_avg": 50,
+      "top_product_types": [],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/tatcha.json"
+    },
+    {
+      "brand_name": "Aromatherapy Associates",
+      "brand_slug": "aromatherapy-associates",
+      "product_count": 129,
+      "price_min": 17,
+      "price_max": 257,
+      "price_avg": 57,
+      "top_product_types": [
+        {
+          "type": "Bath & Shower Oil",
+          "count": 27
+        },
+        {
+          "type": "Gifting",
+          "count": 9
+        },
+        {
+          "type": "Diffuser Oil",
+          "count": 8
+        },
+        {
+          "type": "Shower Oil",
+          "count": 8
+        },
+        {
+          "type": "Bundle",
+          "count": 6
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/aromatherapy-associates.json"
+    },
+    {
+      "brand_name": "PB 0110",
+      "brand_slug": "pb-0110",
+      "product_count": 128,
+      "price_min": 16,
+      "price_max": 14521,
+      "price_avg": 1315,
+      "top_product_types": [
+        {
+          "type": "Card case",
+          "count": 16
+        },
+        {
+          "type": "Key ring",
+          "count": 13
+        },
+        {
+          "type": "Pouch",
+          "count": 9
+        },
+        {
+          "type": "Care",
+          "count": 9
+        },
+        {
+          "type": "Wallet",
+          "count": 8
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/pb-0110.json"
+    },
+    {
+      "brand_name": "L:A Bruket",
+      "brand_slug": "l-a-bruket",
+      "product_count": 128,
+      "price_min": 6,
+      "price_max": 142,
+      "price_avg": 45,
+      "top_product_types": [
+        {
+          "type": "Lemongrass",
+          "count": 16
+        },
+        {
+          "type": "Sage / Rosemary / Lavender",
+          "count": 11
+        },
+        {
+          "type": "Bergamot / Patchouli",
+          "count": 10
+        },
+        {
+          "type": "Hinoki",
+          "count": 6
+        },
+        {
+          "type": "Beach Fire",
+          "count": 5
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/l-a-bruket.json"
+    },
+    {
       "brand_name": "Kjaer Weis",
       "brand_slug": "kjaer-weis",
       "product_count": 127,
@@ -3190,6 +4907,130 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/kjaer-weis.json"
+    },
+    {
+      "brand_name": "Ouai",
+      "brand_slug": "ouai",
+      "product_count": 125,
+      "price_min": 14,
+      "price_max": 116,
+      "price_avg": 38,
+      "top_product_types": [
+        {
+          "type": "Shampoo",
+          "count": 18
+        },
+        {
+          "type": "Hair Styling Product",
+          "count": 16
+        },
+        {
+          "type": "Body",
+          "count": 16
+        },
+        {
+          "type": "Conditioner",
+          "count": 12
+        },
+        {
+          "type": "Sample",
+          "count": 10
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/ouai.json"
+    },
+    {
+      "brand_name": "Coco de Mer",
+      "brand_slug": "coco-de-mer",
+      "product_count": 125,
+      "price_min": 1,
+      "price_max": 695,
+      "price_avg": 193,
+      "top_product_types": [
+        {
+          "type": "Loungewear & Nightwear",
+          "count": 20
+        },
+        {
+          "type": "Bras",
+          "count": 20
+        },
+        {
+          "type": "Knickers",
+          "count": 17
+        },
+        {
+          "type": "Unclassified",
+          "count": 5
+        },
+        {
+          "type": "Ticket",
+          "count": 5
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/coco-de-mer.json"
+    },
+    {
+      "brand_name": "Vitruvi",
+      "brand_slug": "vitruvi",
+      "product_count": 125,
+      "price_min": 1.5,
+      "price_max": 357.67,
+      "price_avg": 59,
+      "top_product_types": [
+        {
+          "type": "Essential Oil Blend",
+          "count": 24
+        },
+        {
+          "type": "Air Scent Refill",
+          "count": 13
+        },
+        {
+          "type": "Diffuser Replacement Part",
+          "count": 12
+        },
+        {
+          "type": "Diffuser Bundle",
+          "count": 10
+        },
+        {
+          "type": "Essential Oil",
+          "count": 7
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/vitruvi.json"
+    },
+    {
+      "brand_name": "Greats",
+      "brand_slug": "greats",
+      "product_count": 123,
+      "price_min": 9,
+      "price_max": 225,
+      "price_avg": 120,
+      "top_product_types": [
+        {
+          "type": "Men's Shoes",
+          "count": 60
+        },
+        {
+          "type": "Laces",
+          "count": 30
+        },
+        {
+          "type": "Women's Shoes",
+          "count": 19
+        },
+        {
+          "type": "Socks",
+          "count": 6
+        },
+        {
+          "type": "Sneaker Cleaning",
+          "count": 5
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/greats.json"
     },
     {
       "brand_name": "Sophie Lou Jacobsen",
@@ -3244,6 +5085,99 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/juliette.json"
+    },
+    {
+      "brand_name": "Senreve",
+      "brand_slug": "senreve",
+      "product_count": 108,
+      "price_min": 3,
+      "price_max": 945,
+      "price_avg": 161,
+      "top_product_types": [
+        {
+          "type": "HBR",
+          "count": 24
+        },
+        {
+          "type": "Bag",
+          "count": 11
+        },
+        {
+          "type": "GWP",
+          "count": 8
+        },
+        {
+          "type": "Handbag & Wallet Accessories",
+          "count": 6
+        },
+        {
+          "type": "Belts",
+          "count": 3
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/senreve.json"
+    },
+    {
+      "brand_name": "Peony",
+      "brand_slug": "peony",
+      "product_count": 107,
+      "price_min": 50,
+      "price_max": 480,
+      "price_avg": 183,
+      "top_product_types": [
+        {
+          "type": "Bikini Tops",
+          "count": 30
+        },
+        {
+          "type": "Bikini Bottoms",
+          "count": 29
+        },
+        {
+          "type": "Dresses",
+          "count": 22
+        },
+        {
+          "type": "One Pieces",
+          "count": 7
+        },
+        {
+          "type": "Tops",
+          "count": 5
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/peony.json"
+    },
+    {
+      "brand_name": "De Bonne Facture",
+      "brand_slug": "de-bonne-facture",
+      "product_count": 106,
+      "price_min": 18,
+      "price_max": 1250,
+      "price_avg": 403,
+      "top_product_types": [
+        {
+          "type": "TROUSERS",
+          "count": 25
+        },
+        {
+          "type": "JACKETS",
+          "count": 16
+        },
+        {
+          "type": "SHIRTS",
+          "count": 15
+        },
+        {
+          "type": "PULLOVERS",
+          "count": 7
+        },
+        {
+          "type": "OVERSHIRTS",
+          "count": 5
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/de-bonne-facture.json"
     },
     {
       "brand_name": "Diotima",
@@ -3370,6 +5304,118 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/emme-parsons.json"
     },
     {
+      "brand_name": "Snowe",
+      "brand_slug": "snowe",
+      "product_count": 89,
+      "price_min": 7,
+      "price_max": 395,
+      "price_avg": 109,
+      "top_product_types": [
+        {
+          "type": "Bedding",
+          "count": 22
+        },
+        {
+          "type": "Towels",
+          "count": 9
+        },
+        {
+          "type": "Flatware",
+          "count": 9
+        },
+        {
+          "type": "Eat Accessories",
+          "count": 9
+        },
+        {
+          "type": "Table-Linens",
+          "count": 6
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/snowe.json"
+    },
+    {
+      "brand_name": "Votary",
+      "brand_slug": "votary",
+      "product_count": 89,
+      "price_min": 6,
+      "price_max": 313.2,
+      "price_avg": 69,
+      "top_product_types": [
+        {
+          "type": "Super Seed",
+          "count": 16
+        },
+        {
+          "type": "Bath and Body",
+          "count": 14
+        },
+        {
+          "type": "Mini",
+          "count": 12
+        },
+        {
+          "type": "Natural Glow",
+          "count": 9
+        },
+        {
+          "type": "Accessories",
+          "count": 7
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/votary.json"
+    },
+    {
+      "brand_name": "Clae",
+      "brand_slug": "clae",
+      "product_count": 84,
+      "price_min": 20,
+      "price_max": 240,
+      "price_avg": 184,
+      "top_product_types": [
+        {
+          "type": "Sneakers",
+          "count": 42
+        },
+        {
+          "type": "Trainers",
+          "count": 17
+        },
+        {
+          "type": "Heritage",
+          "count": 13
+        },
+        {
+          "type": "Runners",
+          "count": 7
+        },
+        {
+          "type": "High-Top",
+          "count": 2
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/clae.json"
+    },
+    {
+      "brand_name": "Mara Hoffman",
+      "brand_slug": "mara-hoffman",
+      "product_count": 77,
+      "price_min": 55,
+      "price_max": 910,
+      "price_avg": 236,
+      "top_product_types": [
+        {
+          "type": "Coverup - Sale",
+          "count": 1
+        },
+        {
+          "type": "Top - Sale",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/mara-hoffman.json"
+    },
+    {
       "brand_name": "Christopher John Rogers",
       "brand_slug": "christopher-john-rogers",
       "product_count": 76,
@@ -3490,6 +5536,130 @@
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/hunting-season.json"
     },
     {
+      "brand_name": "Eve Lom",
+      "brand_slug": "eve-lom",
+      "product_count": 61,
+      "price_min": 5,
+      "price_max": 325,
+      "price_avg": 105,
+      "top_product_types": [
+        {
+          "type": "Sample",
+          "count": 17
+        },
+        {
+          "type": "Cleanser",
+          "count": 9
+        },
+        {
+          "type": "Cream",
+          "count": 4
+        },
+        {
+          "type": "Mask",
+          "count": 3
+        },
+        {
+          "type": "Treatment",
+          "count": 2
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/eve-lom.json"
+    },
+    {
+      "brand_name": "Herbivore Botanicals",
+      "brand_slug": "herbivore-botanicals",
+      "product_count": 54,
+      "price_min": 12,
+      "price_max": 125,
+      "price_avg": 49,
+      "top_product_types": [
+        {
+          "type": "Bodycare",
+          "count": 19
+        },
+        {
+          "type": "Skincare",
+          "count": 13
+        },
+        {
+          "type": "Serums",
+          "count": 3
+        },
+        {
+          "type": "Lip Balm",
+          "count": 2
+        },
+        {
+          "type": "Facial Oils",
+          "count": 2
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/herbivore-botanicals.json"
+    },
+    {
+      "brand_name": "Feit",
+      "brand_slug": "feit",
+      "product_count": 49,
+      "price_min": 10,
+      "price_max": 895,
+      "price_avg": 360,
+      "top_product_types": [
+        {
+          "type": "SHOES",
+          "count": 18
+        },
+        {
+          "type": "Restoration",
+          "count": 15
+        },
+        {
+          "type": "CARE",
+          "count": 7
+        },
+        {
+          "type": "ACCESSORIES",
+          "count": 2
+        },
+        {
+          "type": "Repair",
+          "count": 1
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/feit.json"
+    },
+    {
+      "brand_name": "Sunday Riley",
+      "brand_slug": "sunday-riley",
+      "product_count": 47,
+      "price_min": 1,
+      "price_max": 275,
+      "price_avg": 58,
+      "top_product_types": [
+        {
+          "type": "KIT",
+          "count": 16
+        },
+        {
+          "type": "Serum",
+          "count": 6
+        },
+        {
+          "type": "cleanser",
+          "count": 4
+        },
+        {
+          "type": "moisturizer",
+          "count": 4
+        },
+        {
+          "type": "OIL",
+          "count": 4
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/sunday-riley.json"
+    },
+    {
       "brand_name": "Kika Vargas",
       "brand_slug": "kika-vargas",
       "product_count": 44,
@@ -3519,6 +5689,67 @@
         }
       ],
       "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/kika-vargas.json"
+    },
+    {
+      "brand_name": "The Nue Co.",
+      "brand_slug": "the-nue-co",
+      "product_count": 44,
+      "price_min": 1,
+      "price_max": 130,
+      "price_avg": 51,
+      "top_product_types": [
+        {
+          "type": "single",
+          "count": 14
+        },
+        {
+          "type": "Sample",
+          "count": 10
+        },
+        {
+          "type": "Single",
+          "count": 10
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/the-nue-co.json"
+    },
+    {
+      "brand_name": "Vintner's Daughter",
+      "brand_slug": "vintner-s-daughter",
+      "product_count": 25,
+      "price_min": 1.1,
+      "price_max": 740,
+      "price_avg": 237,
+      "top_product_types": [
+        {
+          "type": "Free Gift",
+          "count": 4
+        },
+        {
+          "type": "ATE",
+          "count": 3
+        },
+        {
+          "type": "ABS",
+          "count": 3
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/vintner-s-daughter.json"
+    },
+    {
+      "brand_name": "Moynat",
+      "brand_slug": "moynat",
+      "product_count": 9,
+      "price_min": 790,
+      "price_max": 3400,
+      "price_avg": 1843,
+      "top_product_types": [
+        {
+          "type": "Handbags, Wallets & Cases",
+          "count": 8
+        }
+      ],
+      "file_url": "https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/products/moynat.json"
     }
   ]
 }
