@@ -1,0 +1,102 @@
+{
+  "name": "Mirakl — Import all 153k products to Supabase",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Start (Manual)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build list of 34 product chunk URLs\nconst base = 'https://raw.githubusercontent.com/Jean-Christophe972/mirakl-scraper/main/data/output/sql_chunks';\nconst urls = [];\nfor (let i = 1; i <= 34; i++) {\n  const num = String(i).padStart(2, '0');\n  urls.push({ chunk_num: i, url: `${base}/02_products_part_${num}.sql` });\n}\nreturn urls.map(u => ({ json: u }));"
+      },
+      "id": "build-urls",
+      "name": "Build 34 URLs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop",
+      "name": "Loop one by one",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "fetch-sql",
+      "name": "Fetch SQL file",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.data }}",
+        "options": {}
+      },
+      "id": "exec-sql",
+      "name": "Execute on Supabase (Postgres)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [1080, 300],
+      "credentials": {
+        "postgres": {
+          "id": "REPLACE_WITH_YOUR_POSTGRES_CREDENTIAL_ID",
+          "name": "Supabase Mirakl (Postgres)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 📖 Comment utiliser ce workflow\n\n**Objectif** : importer les 34 chunks de produits (153 085 produits au total) dans ta table `seller_products` Supabase, sans coller à la main.\n\n### Setup (une fois)\n1. **Credentials → New → Postgres**\n   - Host: `aws-0-eu-west-3.pooler.supabase.com`\n   - Port: `5432`\n   - Database: `postgres`\n   - User: `postgres.ltuarofidogdjhzosboe`\n   - Password: ton password DB Supabase\n   - SSL: `require`\n2. Ouvre le node **\"Execute on Supabase\"** et sélectionne cette credential\n3. Clique **Execute Workflow** (bouton en haut à droite)\n\n### Ce que ça fait\n- Génère 34 URLs vers les chunks sur GitHub\n- Pour chaque URL : télécharge le SQL + l'exécute sur Supabase\n- Durée totale : ~10-15 min (chaque chunk = ~4500 INSERTs)\n\n### Si ça timeout en cours de route\nLe workflow peut être relancé — il réimporte depuis le début (les produits vont se dupliquer si tu relances sans TRUNCATE). Pour éviter, run cette SQL d'abord :\n```sql\nTRUNCATE seller_products;\n```\npuis relance le workflow.",
+        "height": 460,
+        "width": 500
+      },
+      "id": "notes",
+      "name": "Instructions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [200, -220]
+    }
+  ],
+  "connections": {
+    "Start (Manual)": {
+      "main": [[{ "node": "Build 34 URLs", "type": "main", "index": 0 }]]
+    },
+    "Build 34 URLs": {
+      "main": [[{ "node": "Loop one by one", "type": "main", "index": 0 }]]
+    },
+    "Loop one by one": {
+      "main": [[{ "node": "Fetch SQL file", "type": "main", "index": 0 }]]
+    },
+    "Fetch SQL file": {
+      "main": [[{ "node": "Execute on Supabase (Postgres)", "type": "main", "index": 0 }]]
+    },
+    "Execute on Supabase (Postgres)": {
+      "main": [[{ "node": "Loop one by one", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {},
+  "versionId": "1"
+}
